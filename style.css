@@ -1,0 +1,143 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: 'Helvetica Neue', 'Inter', sans-serif;
+}
+
+/* ===== Section 1: Hero Video ===== */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+}
+
+/* ===== Section 1: Hero Typewriter Effect ===== */
+#typing-headline::after {
+    content: '|';
+    font-weight: 200;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { color: transparent }
+    50% { color: white }
+}
+
+.typing-done::after {
+    display: none;
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 1s ease-out 1.5s forwards; /* Added delay */
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== Section 1: Contact Button Animation ===== */
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: conic-gradient(from 180deg at 50% 50%, #00000000 0%, #0000004D 20%, #00000000 25%);
+    animation: rotate-inner-shadow 4s linear infinite;
+}
+
+@keyframes rotate-inner-shadow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== Section 2: Letter Reveal Animation ===== */
+.char {
+    /* Dimmed color by default */
+    color: rgb(51, 51, 51);
+    transition: color 0.4s ease-in-out;
+    display: inline-block;
+}
+
+/* When the parent line is active, change the letter color to soft white */
+.line.is-active .char {
+    color: rgb(229, 231, 235);
+}
+
+/* Staggered delay for each letter to create the reveal effect */
+.line.is-active .char:nth-child(1) { transition-delay: 0.03s; }
+.line.is-active .char:nth-child(2) { transition-delay: 0.06s; }
+.line.is-active .char:nth-child(3) { transition-delay: 0.09s; }
+.line.is-active .char:nth-child(4) { transition-delay: 0.12s; }
+.line.is-active .char:nth-child(5) { transition-delay: 0.15s; }
+.line.is-active .char:nth-child(6) { transition-delay: 0.18s; }
+.line.is-active .char:nth-child(7) { transition-delay: 0.21s; }
+.line.is-active .char:nth-child(8) { transition-delay: 0.24s; }
+.line.is-active .char:nth-child(9) { transition-delay: 0.27s; }
+.line.is-active .char:nth-child(10) { transition-delay: 0.30s; }
+.line.is-active .char:nth-child(11) { transition-delay: 0.33s; }
+.line.is-active .char:nth-child(12) { transition-delay: 0.36s; }
+.line.is-active .char:nth-child(13) { transition-delay: 0.39s; }
+.line.is-active .char:nth-child(14) { transition-delay: 0.42s; }
+.line.is-active .char:nth-child(15) { transition-delay: 0.45s; }
+
+
+/* ===== Section 3: Rewards Section Video ===== */
+.rewards-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+/* ===== Section 4: Design Principles Section (Custom Styles) ===== */
+
+/* Animation for the glowing border of the central orb in the design principles section */
+@keyframes glowing-border-bw {
+    0% { border-color: rgba(255, 255, 255, 0.1); box-shadow: 0 0 10px rgba(255, 255, 255, 0.05); }
+    50% { border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+    100% { border-color: rgba(255, 255, 255, 0.1); box-shadow: 0 0 10px rgba(255, 255, 255, 0.05); }
+}
+
+/* Applies the glowing border animation */
+.animate-glowing-border-bw {
+    animation: glowing-border-bw 3s infinite alternate;
+}
+
+/* Styles for the container of the central video orb */
+.central-orb-container-bw {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px; /* Makes it perfectly circular */
+    overflow: hidden; /* Clips content outside the circle */
+    border: 2px solid rgba(255, 255, 255, 0.15); /* Main border color */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.08), inset 0 0 20px rgba(255, 255, 255, 0.05); /* Outer and inner shadow for glow */
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 0%, transparent 70%); /* Subtle inner glow */
+    /* Optional: Uncomment the line below to apply the glowing border animation */
+    /* animation: glowing-border-bw 4s infinite alternate; */
+}
+
+/* Styles for the video itself within the orb container */
+.central-video-bw {
+    width: 90%; /* Video takes up 90% of its container's width */
+    height: 90%; /* Video takes up 90% of its container's height */
+    object-fit: cover; /* Ensures the video covers the circular area without distortion */
+    border-radius: 9999px; /* Makes the video circular */
+}
