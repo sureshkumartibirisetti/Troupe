@@ -17,7 +17,7 @@ window.onload = function() {
     }, 1000); 
 };
 
-
+//====================================================================================================
 // This function creates the typing effect for the main hero headline.
 function typewriterEffect() {
     const headline = document.getElementById('typing-headline');
@@ -37,7 +37,8 @@ function typewriterEffect() {
     setTimeout(type, 500); // Start typing after a short delay
 }
 
-
+//===========================================================================================================
+// This function handles the letter-reveal animation for the second section.
 // This function handles the letter-reveal animation for the second section.
 function setupScrollObserver() {
     const lines = document.querySelectorAll('.line');
@@ -54,10 +55,12 @@ function setupScrollObserver() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // If a line is in the middle of the screen, add 'is-active' to trigger the CSS animation.
+                // It will remain active even if the user scrolls away.
                 entry.target.classList.add('is-active');
-            } else {
-                // If it's not, remove the class to reset the animation for scrolling up.
-                entry.target.classList.remove('is-active');
+                
+                // OPTIONAL: If you want to stop observing the element after it has been revealed
+                // to save some performance, you can uncomment the line below.
+                // observer.unobserve(entry.target);
             }
         });
     }, options);
@@ -67,3 +70,60 @@ function setupScrollObserver() {
         observer.observe(line);
     });
 }
+//==============================================================================
+// Ai Principles by me
+ // JavaScript to handle the card animations and progress indicator
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    const currentCardElement = document.getElementById('current-card');
+    const totalCards = cards.length;
+
+    // Use IntersectionObserver to track which card is in the viewport
+    const observerOptions = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px 0px -50% 0px', // Trigger when the top of the card hits the middle of the viewport
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove 'active' from all cards
+                cards.forEach(card => card.classList.remove('active'));
+
+                // Add 'active' to the intersecting card
+                const activeCard = entry.target;
+                activeCard.classList.add('active');
+
+                // Update the progress indicator
+                const activeIndex = parseInt(activeCard.dataset.index);
+                currentCardElement.textContent = activeIndex + 1;
+            }
+        });
+    }, observerOptions);
+
+    // Observe each card element
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+
+    // Handle initial state on page load
+    if (cards.length > 0) {
+        cards[0].classList.add('active');
+        currentCardElement.textContent = '1';
+    }
+});
+// ====================================================================================
+// Section 4 Join waitList Thank yOu
+document.getElementById('waitlist-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const waitlistFormCard = document.getElementById('waitlist-form-card');
+            const thankYouCard = document.getElementById('thank-you-card');
+            
+            // Hide the form card
+            waitlistFormCard.classList.add('hidden');
+            
+            // Show the thank you card
+            thankYouCard.classList.remove('hidden');
+        });

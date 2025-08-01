@@ -15,7 +15,7 @@ body {
     height: auto;
     z-index: -1; 
 }
-
+/* ================================================================================== */
 /* ===== Section 1: Hero Typewriter Effect ===== */
 #typing-headline::after {
     content: '|';
@@ -42,7 +42,7 @@ body {
         opacity: 1;
     }
 }
-
+/* ======================================================================================= */
 /* ===== Section 1: Contact Button Animation ===== */
 .contact-btn::before {
     content: '';
@@ -104,6 +104,7 @@ body {
     height: auto;
     z-index: -1;
 }
+/* ================================================================================================== */
 
 /* ===== Section 4: Design Principles Section (Custom Styles) ===== */
 
@@ -141,3 +142,230 @@ body {
     object-fit: cover; /* Ensures the video covers the circular area without distortion */
     border-radius: 9999px; /* Makes the video circular */
 }
+/* ========================================================================================= */
+/* Design principles AI by me */
+/* Fixed container for the main card */
+    /* Fixed Header */
+       /* Custom CSS for the scrolling card effect */
+       /* Your existing CSS with some modifications for a smoother effect */
+.card-container {
+    height: 500vh; /* Make it scrollable */
+}
+
+.card {
+    position: sticky;
+    top: 80px;
+    transition: all 0.3s ease-out;
+}
+
+.card-content {
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* This is the key styling for cards that are not active */
+.card:not(.active) .card-content {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 24px 24px 0;
+    transition: all 0.5s ease-out;
+}
+
+.card-image.left {
+    left: 0;
+    right: auto;
+    border-radius: 24px 0 0 24px;
+}
+
+.card-text {
+    width: 50%;
+    padding: 3rem;
+    transition: all 0.5s ease-out;
+}
+
+.card-text.right {
+    margin-left: auto;
+}
+
+.stats-overlay {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    min-width: 200px;
+    transition: all 0.5s ease-out;
+}
+
+.stats-overlay.left {
+    left: 2rem;
+    right: auto;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-image, .card-text {
+        width: 100%;
+    }
+    
+    .card-image {
+        position: relative;
+        height: 200px;
+        border-radius: 24px 24px 0 0 !important;
+    }
+    
+    .card-text {
+        padding: 2rem;
+    }
+    
+    .stats-overlay {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        left: auto;
+        margin: 1rem 2rem 0;
+    }
+}
+
+/* Fixed card container - this div should be a direct child of your body */
+
+        /* ======================================================================================== */
+/* Section 4 Join waitList */
+/* The container for centering now has its own styles */
+      @keyframes pulse-shadow-green {
+            0% { box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.4); }
+            50% { box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6); }
+            100% { box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.4); }
+        }
+        @keyframes pulse-shadow-violet {
+            0% { box-shadow: 0 0 5px 2px #9f7aea; }
+            50% { box-shadow: 0 0 15px 5px #9f7aea; }
+            100% { box-shadow: 0 0 5px 2px #9f7aea; }
+        }
+        
+        body {
+            background-color: black;
+            color: white;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .waitlist-container {
+            background-color: black;
+            border-radius: 1rem;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            /* border: 2px solid rgba(172, 57, 57, 0.1);
+            animation: pulse-shadow-blue 3s infinite ease-in-out; */
+            border: 2px solid #9f7aea; /*Set a default green border for the thank you card */
+            animation: pulse-shadow-violet 3s infinite ease-in-out; /*Apply the green animation */
+        }
+
+        .thank-you-card {
+            background-color: black;
+            color: white;
+            padding: 4rem;
+            border-radius: 1rem;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            border: 2px solid green; /* Set a default green border for the thank you card */
+            animation: pulse-shadow-green 3s infinite ease-in-out; /* Apply the green animation */
+        }
+        .thank-you-card h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hidden {
+            display: none;
+        }
+
+        /* --- Other styles from previous code --- */
+        .soon-badge {
+            background-color: #2d3748;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        .soon-badge span {
+            color: #9f7aea;
+            font-weight: 500;
+        }
+
+        .input-field {
+            width: 100%;
+            background-color: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            color: white;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .input-field:focus {
+            border-color: #9f7aea;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(90deg, #6b46c1, #805ad5);
+            color: white;
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(128, 90, 213, 0.4), 0 2px 4px -1px rgba(128, 90, 213, 0.06);
+        }
