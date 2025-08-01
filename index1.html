@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TroupeX - Built for the Originals</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="TroupeX is an end-to-end ecosystem for project-based professionals to find work, upskill, collaborate, and grow.">
+    <meta name="keywords" content="TroupeX, Troupe, portfolio, creative community, talent network, AI skill builder, project collaboration, freelance, jobs">
+
+    <!-- Open Graph Meta Tags for social media sharing -->
+    <meta property="og:title" content="TroupeX - Built for the Originals">
+    <meta property="og:description" content="An ecosystem to find work, upskill, collaborate and grow for the project-based world.">
+    <meta property="og:url" content="https://www.troupex.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://placehold.co/1200x630/000000/ffffff?text=TroupeX">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== General Base Styles ===== */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling on smaller devices */
+        }
+        
+        /* Utility class to smoothly scroll to sections */
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== Responsive Header Styles ===== */
+        .header {
+            transition: all 0.3s ease-in-out;
+        }
+        .scrolled-header {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .scrolled-header .logo {
+            height: 2.5rem; /* Make logo smaller */
+        }
+        .scrolled-header .nav-links li {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        /* ===== Preloader ===== */
+        #preloader {
+            background-color: black;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        /* ===== Hero Section Video & Mobile Fallback ===== */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+        /* On small screens, hide the video and show a placeholder image */
+        @media (max-width: 767px) {
+            .hero-video {
+                display: none;
+            }
+            #hero-section {
+                background-image: url('./Assets/troupeX-logo2.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        
+        /* ===== Hero Section Typing Effect ===== */
+        #typing-headline::after {
+            content: '|';
+            font-weight: 200;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { color: transparent }
+            50% { color: white }
+        }
+        .typing-done::after {
+            display: none;
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out 1.5s forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== Contact Button Animation ===== */
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: conic-gradient(from 180deg at 50% 50%, #00000000 0%, #0000004D 20%, #00000000 25%);
+            animation: rotate-inner-shadow 4s linear infinite;
+        }
+        @keyframes rotate-inner-shadow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===== Letter Reveal Animation ===== */
+        .char {
+            color: rgb(51, 51, 51);
+            transition: color 0.4s ease-in-out;
+            display: inline-block;
+        }
+        .line.is-active .char {
+            color: rgb(229, 231, 235);
+        }
+        .line.is-active .char:nth-child(1) { transition-delay: 0.03s; }
+        .line.is-active .char:nth-child(2) { transition-delay: 0.06s; }
+        .line.is-active .char:nth-child(3) { transition-delay: 0.09s; }
+        .line.is-active .char:nth-child(4) { transition-delay: 0.12s; }
+        .line.is-active .char:nth-child(5) { transition-delay: 0.15s; }
+        .line.is-active .char:nth-child(6) { transition-delay: 0.18s; }
+        .line.is-active .char:nth-child(7) { transition-delay: 0.21s; }
+        .line.is-active .char:nth-child(8) { transition-delay: 0.24s; }
+        .line.is-active .char:nth-child(9) { transition-delay: 0.27s; }
+        .line.is-active .char:nth-child(10) { transition-delay: 0.30s; }
+        .line.is-active .char:nth-child(11) { transition-delay: 0.33s; }
+        .line.is-active .char:nth-child(12) { transition-delay: 0.36s; }
+        .line.is-active .char:nth-child(13) { transition-delay: 0.39s; }
+        .line.is-active .char:nth-child(14) { transition-delay: 0.42s; }
+        .line.is-active .char:nth-child(15) { transition-delay: 0.45s; }
+
+        /* ===== Rewards Section Video & Mobile Fallback ===== */
+        .rewards-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+        @media (max-width: 767px) {
+            .rewards-video {
+                display: none;
+            }
+            #rewards-section {
+                background-image: url('https://placehold.co/1920x1080/000000/ffffff?text=Rewards');
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        
+        /* ===== Card Scrolling Section ===== */
+        .card-container {
+            height: auto;
+            padding-bottom: 2rem;
+        }
+        .card {
+            @media (min-width: 768px) {
+                position: sticky;
+                top: 80px;
+            }
+            transition: all 0.3s ease-out;
+        }
+        .card-content {
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .card:not(.active) .card-content {
+            transform: scale(0.9);
+            opacity: 0.8;
+        }
+        .card-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 24px 24px 0;
+            transition: all 0.5s ease-out;
+        }
+        .card-image.left {
+            left: 0;
+            right: auto;
+            border-radius: 24px 0 0 24px;
+        }
+        .card-text {
+            width: 50%;
+            padding: 3rem;
+            transition: all 0.5s ease-out;
+        }
+        .card-text.right {
+            margin-left: auto;
+        }
+        .stats-overlay {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            min-width: 200px;
+            transition: all 0.5s ease-out;
+        }
+        .stats-overlay.left {
+            left: 2rem;
+            right: auto;
+        }
+        @media (max-width: 768px) {
+            .card-content {
+                display: flex;
+                flex-direction: column;
+            }
+            .card-image, .card-text {
+                width: 100%;
+                position: relative;
+            }
+            .card-image {
+                height: 250px;
+                border-radius: 24px 24px 0 0 !important;
+            }
+            .card-image.left {
+                border-radius: 24px 24px 0 0 !important;
+            }
+            .card-text {
+                padding: 2rem;
+            }
+            .card-text.right {
+                margin-left: 0;
+            }
+            .stats-overlay {
+                position: static;
+                bottom: auto;
+                right: auto;
+                left: auto;
+                margin: 0 2rem 2rem;
+            }
+        }
+        
+        /* ===== Design Principles Section ===== */
+        .central-orb-container-bw {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.08), inset 0 0 20px rgba(255, 255, 255, 0.05);
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+        }
+        .central-video-bw {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            border-radius: 9999px;
+        }
+        @media (max-width: 767px) {
+            .central-video-bw {
+                display: none;
+            }
+            .central-orb-container-bw {
+                background-image: url('https://placehold.co/500x500/000000/ffffff?text=TroupeX+AI');
+                background-size: cover;
+            }
+        }
+
+        /* ===== Waitlist Form & Newsletter ===== */
+        @keyframes pulse-shadow-green {
+            0% { box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.4); }
+            50% { box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6); }
+            100% { box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.4); }
+        }
+        @keyframes pulse-shadow-violet {
+            0% { box-shadow: 0 0 5px 2px #9f7aea; }
+            50% { box-shadow: 0 0 15px 5px #9f7aea; }
+            100% { box-shadow: 0 0 5px 2px #9f7aea; }
+        }
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .waitlist-container, .thank-you-card {
+            background-color: black;
+            border-radius: 1rem;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        .waitlist-container {
+            border: 2px solid #9f7aea;
+            animation: pulse-shadow-violet 3s infinite ease-in-out;
+        }
+        .thank-you-card {
+            border: 2px solid green;
+            animation: pulse-shadow-green 3s infinite ease-in-out;
+        }
+        .thank-you-card h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hidden {
+            display: none;
+        }
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 50;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white font-sans">
+    <!-- Loader -->
+    <div id="preloader" class="fixed inset-0 flex justify-center items-center z-50">
+        <img src="./Assets/troupeX-logo2.jpg" alt="TroupeX Logo" class="w-48 animate-pulse">
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="opacity-0 transition-opacity duration-500">
+
+        <!-- ============================================================================ -->
+        <!-- Hero Section -->
+        <section id="hero-section" class="relative h-screen w-full flex flex-col overflow-hidden">
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="./Assets/Updated-background-page2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+            <!-- Nav Bar -->
+            <header id="main-header" class="header fixed top-0 left-0 w-full z-40 px-6 py-4 transition-all duration-300">
+                <nav class="container mx-auto flex justify-between items-center">
+                    <a href="#"><img src="./Assets/troupeX-logo2.jpg" alt="TroupeX Logo" class="logo h-10 transition-all duration-300"></a>
+                    <ul class="hidden md:flex items-center space-x-12 text-gray-300">
+                        <li><a href="#overview" class="nav-link hover:text-purple-300 transition-colors">Overview</a></li>
+                        <li><a href="#how-it-works" class="nav-link hover:text-purple-300 transition-colors">How it works</a></li>
+                        <li><a href="#about" class="nav-link hover:text-purple-300 transition-colors">About</a></li>
+                        <li>
+                            <a href="#contact" class="contact-btn relative overflow-hidden bg-gray-200 text-black text-base font-semibold px-5 py-2 rounded-full">
+                                <span class="relative z-10">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <button id="mobile-menu-btn" class="md:hidden text-white" aria-label="Open mobile menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    </button>
+                </nav>
+            </header>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="flex justify-end p-6">
+                    <button id="close-menu-btn" class="text-white" aria-label="Close mobile menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+                <ul class="flex flex-col items-center space-y-8 text-gray-300 text-2xl">
+                    <li><a href="#overview" class="hover:text-white transition-colors">Overview</a></li>
+                    <li><a href="#how-it-works" class="hover:text-white transition-colors">How it works</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <main class="relative flex-grow flex flex-col items-center justify-center text-center px-4">
+                <div class="relative z-10">
+                    <h1 id="typing-headline" class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight"></h1>
+                    <p class="max-w-2xl mx-auto mt-6 text-lg md:text-xl text-gray-400 opacity-0 animate-fadeInUp">
+                        Troupe is an end-to-end ecosystem to find work, upskill, collaborate and grow for the project-based world.
+                    </p>
+                </div>
+            </main>
+        </section>
+
+        <!-- ================================================================================================ -->
+        <!-- Letter Reveal Section -->
+        <section id="letter-reveal-section" class="relative bg-black text-white w-full flex flex-col items-center justify-center py-32">
+            <div class="max-w-4xl mx-auto px-6 text-center space-y-24">
+                <p class="text-lg uppercase tracking-widest text-gray-300">Take the future into your own hands.</p>
+                <div class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight space-y-4">
+                    <p class="line"><span class="char">N</span><span class="char">o</span><span class="char">&nbsp;</span><span class="char">m</span><span class="char">o</span><span class="char">r</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">w</span><span class="char">a</span><span class="char">i</span><span class="char">t</span><span class="char">i</span><span class="char">n</span><span class="char">g</span><span class="char">.</span></p>
+                    <p class="line"><span class="char">N</span><span class="char">o</span><span class="char">&nbsp;</span><span class="char">m</span><span class="char">o</span><span class="char">r</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">g</span><span class="char">a</span><span class="char">t</span><span class="char">e</span><span class="char">k</span><span class="char">e</span><span class="char">e</span><span class="char">p</span><span class="char">e</span><span class="char">r</span><span class="char">s</span><span class="char">.</span></p>
+                    <p class="line"><span class="char">G</span><span class="char">e</span><span class="char">t</span><span class="char">&nbsp;</span><span class="char">a</span><span class="char">c</span><span class="char">c</span><span class="char">e</span><span class="char">s</span><span class="char">s</span><span class="char">.</span><span class="char">&nbsp;</span><span class="char">f</span><span class="char">o</span><span class="char">r</span><span class="char">&nbsp;</span><span class="char">y</span><span class="char">o</span><span class="char">u</span><span class="char">r</span><span class="char">s</span><span class="char">e</span><span class="char">l</span><span class="char">f</span><span class="char">,</span></p>
+                    <p class="line"><span class="char">B</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">b</span><span class="char">o</span><span class="char">l</span><span class="char">d</span><span class="char">.</span></p>
+                    <p class="line"><span class="char">B</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">r</span><span class="char">a</span><span class="char">w</span><span class="char">.</span></p>
+                    <p class="line"><span class="char">B</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">r</span><span class="char">e</span><span class="char">a</span><span class="char">l</span><span class="char">.</span></p>
+                    <p class="line"><span class="char">T</span><span class="char">r</span><span class="char">o</span><span class="char">u</span><span class="char">p</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">i</span><span class="char">n</span><span class="char">&nbsp;</span><span class="char">t</span><span class="char">o</span><span class="char">&nbsp;</span><span class="char">s</span><span class="char">h</span><span class="char">a</span><span class="char">p</span><span class="char">e</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">t</span><span class="char">h</span><span class="char">e</span></p>
+                    <p class="line"><span class="char">h</span><span class="char">u</span><span class="char">m</span><span class="char">a</span><span class="char">n</span><span class="char">-</span><span class="char">l</span><span class="char">e</span><span class="char">d</span><span class="char">&nbsp;</span><span class="char">w</span><span class="char">o</span><span class="char">r</span><span class="char">l</span><span class="char">d</span><span class="char">&nbsp;</span><span class="char">a</span><span class="char">h</span><span class="char">e</span><span class="char">a</span><span class="char">d</span><span class="char">.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================================================== -->
+        <!-- Rewards Section -->
+        <section id="rewards-section" class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+            <video autoplay loop muted playsinline class="rewards-video">
+                <source src="./Assets/landing-page-bg2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-black/70 z-0"></div>
+            <div class="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
+                <h2 class="text-6xl md:text-8xl font-extrabold">
+                    all that you deserve.
+                    <br>
+                    and some more.
+                </h2>
+                <p class="max-w-xl mx-auto mt-6 text-lg text-gray-300">
+                    if you're a Troupe member, you're already a step ahead. every experience you unlock takes you higher up the pedestal.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================================================================================================ -->
+        <!-- AI Me reMold (Cards Section) -->
+        <div id="overview" class="card-container relative px-4 py-16">
+            <!-- Progress Indicator -->
+            <div class="fixed top-8 right-8 bg-white/10 backdrop-blur-md rounded-full p-4 border border-white/20 z-50 md:block hidden">
+                <div class="text-white text-sm font-medium">
+                    <span id="current-card">1</span> / 4
+                </div>
+            </div>
+            <!-- Card 1 -->
+            <div class="card mb-8" data-index="0">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
+                    <img class="card-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Create Portfolio">
+                    <div class="card-text">
+                        <div class="text-4xl mb-4">📁</div>
+                        <h2 class="text-4xl font-bold mb-4">Create Portfolio</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Showcase your best work in our sleek interface with customizable templates and client testimonials.</p>
+                    </div>
+                    <div class="stats-overlay">
+                        <div class="stat-item">
+                            <div class="stat-label">Engagement</div>
+                            <div class="stat-value">95%</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Satisfaction</div>
+                            <div class="stat-value">4.8★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card mb-8" data-index="1">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
+                    <img class="card-image left" src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Creative Community">
+                    <div class="card-text right">
+                        <div class="text-4xl mb-4">👥</div>
+                        <h2 class="text-4xl font-bold mb-4">Creative Community</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Join thousands collaborating on projects with real-time messaging and skill matching.</p>
+                    </div>
+                    <div class="stats-overlay left">
+                        <div class="stat-item">
+                            <div class="stat-label">Members</div>
+                            <div class="stat-value">50K+</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Projects</div>
+                            <div class="stat-value">12K</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card mb-8" data-index="2">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
+                    <img class="card-image" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Share Projects">
+                    <div class="card-text">
+                        <div class="text-4xl mb-4">🚀</div>
+                        <h2 class="text-4xl font-bold mb-4">Share Projects</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Get feedback through our engaged community with smart tagging and analytics.</p>
+                    </div>
+                    <div class="stats-overlay">
+                        <div class="stat-item">
+                            <div class="stat-label">Shares</div>
+                            <div class="stat-value">2.5M</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Feedback</div>
+                            <div class="stat-value">98%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card mb-8" data-index="3">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
+                    <img class="card-image left" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Grow Network">
+                    <div class="card-text right">
+                        <div class="text-4xl mb-4">🌐</div>
+                        <h2 class="text-4xl font-bold mb-4">Grow Network</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Connect with professionals through our intelligent networking platform.</p>
+                    </div>
+                    <div class="stats-overlay left">
+                        <div class="stat-item">
+                            <div class="stat-label">Connections</div>
+                            <div class="stat-value">100K</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Success Rate</div>
+                            <div class="stat-value">92%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================================================================== -->
+        <!-- Design Principles Section -->
+        <section id="how-it-works" class="relative bg-black text-white py-16 px-4 md:px-10 max-w-screen-xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Our Design Principles</h2>
+                <p class="text-md text-gray-400">A showcase of clean aesthetics and focused content</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="bg-[#111] rounded-[24px] p-8 text-center flex flex-col justify-between items-center border border-white/10 shadow-md hover:translate-y-[-8px] hover:shadow-xl transition-all duration-500 min-h-[300px] md:min-h-[400px]">
+                    <h3 class="text-xl font-semibold mb-4">Create Portfolio</h3>
+                    <p class="text-gray-400 text-base leading-relaxed max-w-[80%] mx-auto">Clean aesthetic with monochrome palette and subtle textures</p>
+                </div>
+
+                <div class="md:col-span-2 relative bg-[#111] rounded-[24px] p-8 flex flex-col items-center justify-center border border-white/10 shadow-md overflow-hidden min-h-[400px] hover:translate-y-[-8px] hover:shadow-xl transition-all duration-500">
+                    <h3 class="text-xl font-semibold text-white mb-6 z-20">Together as one TROUPE</h3>
+                    <div class="relative z-10 flex items-center justify-center w-full h-full">
+                        <div class="central-orb-container-bw w-50 h-50 sm:w-60 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 flex items-center justify-center">
+                            <video src="./Assets/atom-circle.mp4" autoplay loop muted playsinline class="central-video-bw"></video>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-base leading-relaxed mt-6 z-20 text-center max-w-[80%] mx-auto">Central element draws attention while maintaining balance</p>
+                </div>
+
+                <div class="bg-[#111] rounded-[24px] p-8 text-center flex flex-col justify-between items-center border border-white/10 shadow-md hover:translate-y-[-8px] hover:shadow-xl transition-all duration-500 min-h-[300px] md:min-h-[400px]">
+                    <h3 class="text-xl font-semibold mb-4">Grow Network</h3>
+                    <p class="text-gray-400 text-base leading-relaxed max-w-[80%] mx-auto">Every element carefully placed for visual harmony</p>
+                </div>
+
+                <div class="bg-[#111] rounded-[24px] p-8 text-center flex flex-col justify-between items-center border border-white/10 shadow-md hover:translate-y-[-8px] hover:shadow-xl transition-all duration-500 min-h-[250px]">
+                    <h3 class="text-xl font-semibold mb-4">Upskill With AI</h3>
+                    <p class="text-gray-400 text-base leading-relaxed max-w-[80%] mx-auto">Clear hierarchy with modern sans-serif fonts</p>
+                </div>
+
+                <div class="bg-[#111] rounded-[24px] p-8 text-center flex flex-col justify-between items-center border border-white/10 shadow-md hover:translate-y-[-8px] hover:shadow-xl transition-all duration-500 min-h-[250px]">
+                    <h3 class="text-xl font-semibold mb-4">Smart Matching</h3>
+                    <p class="text-gray-400 text-base leading-relaxed max-w-[80%] mx-auto">Strategic use of light and dark elements</p>
+                </div>
+
+                <div class="bg-[#111] rounded-[24px] p-8 text-center flex flex-col justify-between items-center border border-white/10 shadow-md hover:translate-y-[-8px] hover:shadow-xl transition-all duration-500 min-h-[250px]">
+                    <h3 class="text-xl font-semibold mb-4">Discover Talent</h3>
+                    <p class="text-gray-400 text-base leading-relaxed max-w-[80%] mx-auto">Subtle animations for enhanced interaction</p>
+                </div>
+
+                <div class="bg-[#111] rounded-[24px] p-8 text-center flex flex-col justify-between items-center border border-white/10 shadow-md hover:translate-y-[-8px] hover:shadow-xl transition-all duration-500 min-h-[250px]">
+                    <h3 class="text-xl font-semibold mb-4">Share Projects</h3>
+                    <p class="text-gray-400 text-base leading-relaxed max-w-[80%] mx-auto">Symmetrical layout with weighted elements</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================================= -->
+        <!-- Join Waitlist Section -->
+        <div class="center-container">
+            <div id="waitlist-form-card" class="waitlist-container">
+                <div class="text-center mb-6">
+                    <span class="bg-[#2d3748] text-white text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center space-x-2">
+                        <span>Soon</span>
+                        <span class="text-[#9f7aea]">Launch in feb 2025</span>
+                    </span>
+                </div>
+                <h2 class="text-4xl font-bold mb-4">Join the waitlist</h2>
+                <p class="text-gray-400 mb-8">
+                    Get exclusive early access to our software and stay updated on launch news.
+                </p>
+                <form id="waitlist-form">
+                    <div class="relative mb-6">
+                        <label for="email-input" class="sr-only">Your Mail Address</label>
+                        <input type="email" id="email-input" class="w-full bg-[#1a1a1a] border border-[rgba(255,255,255,0.2)] rounded-lg p-4 text-white focus:outline-none focus:ring-2 focus:ring-[#9f7aea] input-field" placeholder="Your Mail Address" required>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-[#6b46c1] to-[#805ad5] text-white font-semibold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 submit-button">
+                        Join waitlist
+                    </button>
+                </form>
+                <p class="mt-4 text-sm text-gray-400">Recently Joined Members!</p>
+                <div class="mt-2 flex justify-center -space-x-2">
+                    <img src="https://i.pravatar.cc/32?img=1" class="w-8 h-8 rounded-full border-2 border-black" alt="Avatar of a recently joined member"/>
+                    <img src="https://i.pravatar.cc/32?img=2" class="w-8 h-8 rounded-full border-2 border-black" alt="Avatar of a recently joined member"/>
+                    <img src="https://i.pravatar.cc/32?img=3" class="w-8 h-8 rounded-full border-2 border-black" alt="Avatar of a recently joined member"/>
+                </div>
+            </div>
+
+            <div id="thank-you-card" class="thank-you-card hidden">
+                <h2 class="text-3xl font-bold">Thank you!</h2>
+                <p class="text-gray-300 mt-4">Your email has been added to the waitlist.</p>
+            </div>
+        </div>
+        <!-- ======================================================================================================================= -->
+        <!-- Newsletter Section -->
+        <section id="newsletter-section" class="bg-black text-white py-16 px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold">Your next-gen creative infrastructure is here</h2>
+            <p class="mt-2 text-gray-400">Sign up today and get a free sample up to 100 records.</p>
+            <div class="mt-6 flex flex-col sm:flex-row justify-center items-center gap-2">
+                <label for="newsletter-email" class="sr-only">Enter your email address</label>
+                <input type="email" id="newsletter-email" placeholder="Enter your email address"
+                        class="w-full sm:w-72 px-4 py-2 rounded-md bg-gray-900 border border-gray-600 text-white focus:outline-none" />
+                <button class="w-full sm:w-auto px-4 py-2 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition">
+                    Join Waitlist
+                </button>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">Our experts are ready to help!</p>
+            <div class="mt-2 flex justify-center -space-x-2">
+                <img src="https://i.pravatar.cc/32?img=1" class="w-8 h-8 rounded-full border-2 border-black" alt="Avatar of an expert"/>
+                <img src="https://i.pravatar.cc/32?img=2" class="w-8 h-8 rounded-full border-2 border-black" alt="Avatar of an expert"/>
+                <img src="https://i.pravatar.cc/32?img=3" class="w-8 h-8 rounded-full border-2 border-black" alt="Avatar of an expert"/>
+            </div>
+        </section>
+
+        <!-- ================================================================================================ -->
+        <!-- Experience Section -->
+        <section id="about" class="relative z-20 max-w-6xl mx-auto mt-20 px-6">
+            <div class="bg-gradient-to-br from-black via-[#0a0a0a] to-black text-white py-12 px-8 rounded-3xl shadow-xl shadow-white/10 backdrop-blur-md border border-white/10">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                            Experience superior<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">skip tracing</span>
+                        </h2>
+                        <p class="text-gray-400 mb-6">150+ data points per search.</p>
+                        <button class="px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition">
+                            Get started
+                        </button>
+                    </div>
+
+                    <div>
+                        <img src="./Assets/above-footer1.png" alt="a spinning globe" class="w-64 h-64 md:w-72 md:h-72 object-contain" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================================================== -->
+        <!-- Footer Section -->
+        <footer id="contact" class="bg-black text-gray-400 py-12 px-6 mt-20">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-2">TroupeX</h3>
+                    <p>Hyderabad, India.</p>
+                    <p class="mt-4">Phone: <span class="text-white">+91 7075190397</span></p>
+                    <p>Email: <a href="mailto:support@troupex.com" class="text-white hover:underline">support@skipmatrix.com</a></p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-2">Quick links</h4>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Resources</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-2">Social</h4>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:text-white transition-colors">Facebook</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/troupex/" class="hover:text-white transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-2">Legal</h4>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cookie policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-10 text-sm text-gray-600">
+                © 2024 TroupeX. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // This function runs once the entire page, including assets, is loaded.
+        window.onload = function() {
+            const preloader = document.getElementById('preloader');
+            const mainContent = document.getElementById('main-content');
+            
+            // Wait for 1 second, then fade out the preloader and show the content
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.display = 'none';
+                mainContent.style.opacity = '1';
+
+                // Initialize all animations once the page is visible
+                typewriterEffect();
+                setupScrollObserver();
+                setupCardObserver();
+                setupMobileMenu();
+            }, 1000);
+        };
+        
+        // This function adds a class to the header on scroll, creating the effect
+        function handleScroll() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) { // Adjust this value as needed
+                header.classList.add('scrolled-header');
+            } else {
+                header.classList.remove('scrolled-header');
+            }
+        }
+
+        // Add the scroll event listener
+        window.addEventListener('scroll', handleScroll);
+        
+        // This function creates the typing effect for the main hero headline.
+        function typewriterEffect() {
+            const headline = document.getElementById('typing-headline');
+            const text = "Built for the Originals";
+            let charIndex = 0;
+            headline.innerHTML = '';
+
+            function type() {
+                if (charIndex < text.length) {
+                    headline.innerHTML += text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 110);
+                } else {
+                    headline.classList.add('typing-done');
+                }
+            }
+            setTimeout(type, 500);
+        }
+
+        // This function handles the letter-reveal animation for the second section.
+        function setupScrollObserver() {
+            const lines = document.querySelectorAll('.line');
+            const options = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-active');
+                    }
+                });
+            }, options);
+
+            lines.forEach(line => {
+                observer.observe(line);
+            });
+        }
+
+        // JavaScript to handle the card animations and progress indicator
+        function setupCardObserver() {
+            const cards = document.querySelectorAll('.card');
+            const currentCardElement = document.getElementById('current-card');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        cards.forEach(card => card.classList.remove('active'));
+                        const activeCard = entry.target;
+                        activeCard.classList.add('active');
+                        const activeIndex = parseInt(activeCard.dataset.index);
+                        currentCardElement.textContent = activeIndex + 1;
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+
+            if (cards.length > 0) {
+                cards[0].classList.add('active');
+                currentCardElement.textContent = '1';
+            }
+        }
+
+        // Section 4 Join waitList Thank You
+        const waitlistForm = document.getElementById('waitlist-form');
+        if (waitlistForm) {
+            waitlistForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const waitlistFormCard = document.getElementById('waitlist-form-card');
+                const thankYouCard = document.getElementById('thank-you-card');
+                waitlistFormCard.classList.add('hidden');
+                thankYouCard.classList.remove('hidden');
+            });
+        }
+        
+        // Mobile menu functionality
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('open');
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
