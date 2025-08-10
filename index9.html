@@ -79,20 +79,6 @@
             0%   { transform: translate(0, 0); }
             100% { transform: translate(200px, -200px); }
         }
-        /* @keyframes moveGlow {
-            0% {
-                transform: translate(0, 0);
-            }
-            50% {
-                transform: translate(50px, -30px); 
-            }
-            100% {
-                transform: translate(-40px, 40px);
-            }
-        } 
-        */
-
-
         /* ===== Page-specific backgrounds ===== */
         #hero-section {
             background-color: #000000; /* Pure black for hero */
@@ -359,46 +345,6 @@
             width: 80%;
             border-radius: 30px;
         }
-
-
-
-        /* ===== Premium Button Animations ===== */
-        /* .contact-btn {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .contact-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .contact-btn:hover::before {
-            left: 100%;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        } */
-         /* 2nd page change 10 */
-         /* .scroll-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .scroll-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        } */
          .scroll-container {
             display: flex;
             min-height: 200vh; /* Creates enough vertical space for scrolling */
@@ -524,33 +470,6 @@
         }
 /* --------------------------------------------- */
 
-        /* ===== Rewards Section Enhancement ===== */
-        /* .rewards-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 0;
-            object-fit: cover;
-            filter: brightness(0.6) contrast(1.1);
-        }
-
-        @media (max-width: 767px) {
-            .rewards-video {
-                top: 0;
-                left: 0;
-                transform: none;
-                width: 100%;
-                height: 100%;
-                min-width: 100%;
-                min-height: 100%;
-                object-fit: cover;
-            }
-        } */
          /* Change 7 */
          .rewards-bg {
             position: absolute;
@@ -582,214 +501,7 @@
 
         
         /* ===== Enhanced Card Scrolling System - Reduced Size ===== */
-        .card-container {
-            height: auto;
-            padding-bottom: 4rem;
-        }
         
-        .card {
-            position: sticky;
-            top: 80px;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-content {
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            min-height: 420px !important; /* Reduced from 500px */
-        }
-        
-        .card:not(.active) .card-content {
-            transform: scale(0.92) translateY(15px); /* Reduced scale and translateY */
-            opacity: 0.7;
-            filter: blur(1px);
-        }
-
-        .card.active .card-content {
-            transform: scale(1) translateY(0);
-            opacity: 1;
-            filter: blur(0);
-            box-shadow: 0 25px 50px rgba(159, 122, 234, 0.1);
-        }
-        
-        .card-image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0 24px 24px 0;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            filter: brightness(0.9);
-        }
-
-        .card-image:hover {
-            filter: brightness(1.1);
-            transform: scale(1.05);
-        }
-        
-        .card-image.left {
-            left: 0;
-            right: auto;
-            border-radius: 24px 0 0 24px;
-        }
-        
-        .card-text {
-            width: 50%;
-            padding: 2.5rem; /* Reduced from 3rem */
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            z-index: 10;
-        }
-        
-        .card-text.right {
-            margin-left: auto;
-        }
-
-        .card-text h2 {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-            font-weight: 700 !important;
-            font-size: 2.5rem !important; /* Reduced */
-        }
-
-        .card-text p {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-            font-weight: 300 !important;
-            font-size: 1rem !important; /* Reduced */
-        }
-        
-        .stats-overlay {
-            position: absolute;
-            bottom: 1.5rem; /* Reduced */
-            right: 1.5rem; /* Reduced */
-            background: rgba(0, 0, 0, 0);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(159, 122, 234, 0.3);
-            border-radius: 16px;
-            padding: 0.75rem; /* Reduced */
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem; /* Reduced */
-            min-width: 160px; /* Reduced */
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 10;
-        }
-
-        .stats-overlay:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(159, 122, 234, 0.2);
-        }
-        
-        .stats-overlay.left {
-            left: 1.5rem; /* Reduced */
-            right: auto;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-label {
-            font-size: 0.7rem; /* Reduced */
-            opacity: 0.8;
-            margin-bottom: 0.25rem;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-            font-weight: 400 !important;
-        }
-        
-        .stat-value {
-            font-weight: 700 !important;
-            font-size: 0.9rem; /* Reduced */
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-        }
-        
-        /* ===== Mobile Responsive Enhancements ===== */
-        @media (max-width: 768px) {
-            .card {
-                top: 70px; /* Reduced */
-            }
-            
-            .card-content {
-                min-height: 400px !important; /* Reduced */
-                display: flex;
-                flex-direction: column;
-            }
-            
-            .card-image {
-                position: relative !important;
-                width: 100% !important;
-                height: 180px; /* Reduced */
-                border-radius: 24px 24px 0 0 !important;
-                top: 0 !important;
-                left: 0 !important;
-                right: 0 !important;
-            }
-            
-            .card-image.left {
-                border-radius: 24px 24px 0 0 !important;
-            }
-            
-            .card-text {
-                width: 100% !important;
-                padding: 1.5rem !important; /* Reduced */
-                margin-left: 0 !important;
-                flex-grow: 1;
-            }
-            
-            .card-text.right {
-                margin-left: 0 !important;
-            }
-            
-            .stats-overlay {
-                position: absolute !important;
-                bottom: 1rem !important;
-                left: 1.5rem !important;
-                right: 1.5rem !important;
-                margin: 0 !important;
-                width: auto !important;
-            }
-            
-            .stats-overlay.left {
-                left: 1.5rem !important;
-                right: 1.5rem !important;
-            }
-            
-            .card-text h2 {
-                font-size: 1.8rem !important; /* Reduced */
-            }
-            
-            .card-text p {
-                font-size: 0.9rem !important; /* Reduced */
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .card-content {
-                min-height: 350px !important; /* Reduced */
-            }
-            
-            .card-text {
-                padding: 1.25rem !important; /* Reduced */
-            }
-            
-            .card-text h2 {
-                font-size: 1.6rem !important; /* Reduced */
-                margin-bottom: 0.75rem !important;
-            }
-            
-            .stats-overlay {
-                left: 1.25rem !important;
-                right: 1.25rem !important;
-                padding: 0.6rem !important; /* Reduced */
-                gap: 0.6rem !important; /* Reduced */
-            }
-        }
 
         /* ===== Enhanced Waitlist Section - Equal Sizes ===== */
         .waitlist-main-container {
@@ -1086,25 +798,6 @@
             z-index: 1000;
             transition: transform 0.1s ease-out;
         }
-
-
-        /* Card checking  */
-         /* .glass {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 1rem;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .glass:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    } */
-
-
-
-
     /* ---------------------------------------------------------------------------- */
     /* Shine Effects */
 .shine {
@@ -1462,16 +1155,8 @@
                     <img src="./Assets/troupeX-logo2.jpg" alt="TroupeX Logo" class="logo h-12 transition-all duration-300">
                 </a>
                 <ul class="hidden md:flex items-center space-x-8 text-gray-300">
-                    <!-- change 3 -->
-                    <!-- <li><a href="#AboutUS" class="nav-link hover:text-purple-300 transition-colors px-4 py-2">About</a></li> -->
                     <li><a href="#rewards-section" class="nav-link hover:text-purple-300 transition-colors px-4 py-2">Overview</a></li>
                     <li><a href="#overview" class="nav-link hover:text-purple-300 transition-colors px-4 py-2">How it works</a></li>
-                    <!-- <li> -->
-                        <!-- <a href="#contact" class="contact-btn relative overflow-hidden bg-white text-black text-base font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300">
-                            <span class="relative z-10">Contact</span>
-                        </a> -->
-                        <!-- <a href="#contact" class="contact-btn-glass">Contact</a> -->
-                    <!-- </li>  -->
                      <!-- change 2 -->
                     <li class="btn nav-contact">
                         <a href="#contact">Contact</a>
@@ -1538,79 +1223,8 @@
 
         </main>
     </section>
-
-    <!-- About Us Section --> 
-    <!-- <section id="AboutUS" class="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden py-20"> -->
-        <!-- <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-16 z-10">About Us</h1> -->
-        <!-- <div id="text-wrapper" class="relative w-full h-[300px] flex flex-col items-center justify-center z-10 px-4"> -->
-            <!-- JS Injects lines here  -->
-        <!-- </div> -->
-    <!-- </section> --> 
-
-    <!-- Rewards Section -->
-    <!-- <section id="rewards-section" class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <video autoplay loop muted playsinline class="rewards-video">
-            <source src="./Assets/Spider.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <div class="absolute inset-0 bg-black/60 z-0"></div>
-        <div class="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-            <h2 class="text-4xl md:text-6xl lg:text-8xl font-extrabold mb-8">
-                All that you deserve
-                <br>
-                and some more.
-            </h2>
-            <p class="max-w-xl mx-auto text-lg text-gray-300 leading-relaxed">
-                If you're a Troupe member, you're already a step ahead. Every experience you unlock takes you higher up the pedestal.
-            </p>
-        </div>
-    </section> -->
     <!-- Chnage 6 -->
      <section id="rewards-section" class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-        <!-- <img src="./Assets/purple-background-1.jpg" alt="Background" class="rewards-bg" />
-
-        <div class="absolute inset-0 bg-black/60 z-0"></div>
-            <div class="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-            <h2 class="text-4xl md:text-6xl lg:text-8xl font-extrabold mb-8 text-white">
-                All that you deserve
-                <br>
-                and some more.
-            </h2>
-            <p class="max-w-xl mx-auto text-lg text-gray-300 leading-relaxed">
-                If you're a Troupe member, you're already a step ahead. Every experience you unlock takes you higher up the pedestal.
-            </p>
-        </div> -->
-        <!-- Change 10 -->
-        <!-- <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:space-x-12"> 
-        <div class="md:w-1/2 mb-8 md:mb-0">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                Unite your vision with a nexus of Visionary Creators.
-            </h1>
-        </div>
-
-        <div class="md:w-1/2 space-y-12">
-            <div class="scroll-item">
-                <h2 class="text-2xl md:text-3xl font-bold">The world’s biggest creative troupe</h2>
-                <p class="mt-2 text-gray-400">TroupeX brings for filmmakers, designers, musicians, writers and all other visionaries, together to break silos and drive impossible collaborations.</p>
-            </div>
-
-            <div class="scroll-item">
-                <h2 class="text-2xl md:text-3xl font-bold">The collaboration you never imagined</h2>
-                <p class="mt-2 text-gray-400">Join TroupeX and move further, faster. Every connection you make opens doors to new creative possibilities.</p>
-            </div>
-
-            <div class="scroll-item">
-                <h2 class="text-2xl md:text-3xl font-bold">Do more with your creativity</h2>
-                <p class="mt-2 text-gray-400">Discover collaborators across disciplines, tap into world-class tools, and join projects that redefine what’s possible.</p>
-            </div>
-
-            <div class="scroll-item">
-                <h2 class="text-2xl md:text-3xl font-bold">Work with the best. From anywhere.</h2>
-                <p class="mt-2 text-gray-400">Build films, campaigns, albums, or movements with top-tier talent, no matter where you are.</p>
-            </div>
-        </div>
-    </div> -->
     <img src="./Assets/purple-background-1.jpg" alt="Background" class="rewards-bg" />
     <div class="absolute inset-0 bg-black/60 z-0"></div>
 
@@ -1646,51 +1260,6 @@
         </div>
     </div>
     </section>
-
-
-    <!-- Cards Checking -->
-     <!-- <section class="px-6 py-16 max-w-7xl mx-auto space-y-12">
-
-    Row 1
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
-      <div class="flex items-center justify-center md:justify-start">
-        <h2 class="text-lg font-bold tracking-widest uppercase">Creators</h2>
-      </div>
-      <div class="glass p-6 h-44 flex flex-col justify-between">
-        <h3 class="text-2xl font-bold">Create your Portfolio</h3>
-        <p class="text-sm text-gray-300">Showcase your work, skills and achievements</p>
-      </div>
-      <div class="glass p-6 h-44 flex flex-col justify-between">
-        <h3 class="text-2xl font-bold">Grow your Network</h3>
-        <p class="text-sm text-gray-300">Connect with your tribe, mentors and industry leaders</p>
-      </div>
-      <div class="glass p-6 h-44 flex flex-col justify-between">
-        <h3 class="text-2xl font-bold">Upskill with AI</h3>
-        <p class="text-sm text-gray-300">Learn smarter, faster and stay ahead in your craft</p>
-      </div>
-    </div>
-
-    Row 2
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
-      <div class="flex items-center justify-center md:justify-start">
-        <h2 class="text-lg font-bold tracking-widest uppercase">Organisations</h2>
-      </div>
-      <div class="glass p-6 h-44 flex flex-col justify-between">
-        <h3 class="text-2xl font-bold">Post your Projects</h3>
-        <p class="text-sm text-gray-300">Share opportunities and connect with skilled, verified professionals</p>
-      </div>
-      <div class="glass p-6 h-44 flex flex-col justify-between">
-        <h3 class="text-2xl font-bold">Find the top Talent</h3>
-        <p class="text-sm text-gray-300">Search and filter to discover the perfect match</p>
-      </div>
-      <div class="glass p-6 h-44 flex flex-col justify-between">
-        <h3 class="text-2xl font-bold">AI-driven matching</h3>
-        <p class="text-sm text-gray-300">Get instant, data-backed recommendations for your needs</p>
-      </div>
-    </div>
-
-  </section> -->
-
   <!-- --------------------------------------------------------------------------------------------------- -->
   <!-- Cards Section -->
         <section class="px-6 py-16 max-w-7xl mx-auto space-y-16">
@@ -1832,165 +1401,7 @@
                 </div>
             </div>
         </section>
-        <!-- --------------------------------------------------------------------------------------------------------------- -->
-
-
-    <!-- Overview Cards Section -->
-    <div id="overview" class="card-container relative px-4 py-20">
-        <!-- Card 1 -->
-        <div class="card mb-12 active" data-index="0">
-            <div class="card-content max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative">
-                <img class="card-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Create Portfolio">
-                <div class="card-text">
-                    <div class="text-4xl mb-4">📁</div>
-                    <h2 class="text-3xl font-bold mb-4">Create Portfolio</h2>
-                    <p class="text-gray-300 text-base leading-relaxed">Showcase your best work in our sleek interface with customizable templates and client testimonials.</p>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat-item">
-                        <div class="stat-label">Engagement</div>
-                        <div class="stat-value">95%</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Satisfaction</div>
-                        <div class="stat-value">4.8★</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card mb-12" data-index="1">
-            <div class="card-content max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative">
-                <img class="card-image left" src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Creative Community">
-                <div class="card-text right">
-                    <div class="text-4xl mb-4">👥</div>
-                    <h2 class="text-3xl font-bold mb-4">Creative Community</h2>
-                    <p class="text-gray-300 text-base leading-relaxed">Join thousands collaborating on projects with real-time messaging and skill matching.</p>
-                </div>
-                <div class="stats-overlay left">
-                    <div class="stat-item">
-                        <div class="stat-label">Members</div>
-                        <div class="stat-value">50K+</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Projects</div>
-                        <div class="stat-value">12K</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card mb-12" data-index="2">
-            <div class="card-content max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative">
-                <img class="card-image" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Share Projects">
-                <div class="card-text">
-                    <div class="text-4xl mb-4">🚀</div>
-                    <h2 class="text-3xl font-bold mb-4">Share Projects</h2>
-                    <p class="text-gray-300 text-base leading-relaxed">Get feedback through our engaged community with smart tagging and analytics.</p>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat-item">
-                        <div class="stat-label">Shares</div>
-                        <div class="stat-value">2.5M</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Feedback</div>
-                        <div class="stat-value">98%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="card mb-12" data-index="3">
-            <div class="card-content max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative">
-                <img class="card-image left" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Grow Network">
-                <div class="card-text right">
-                    <div class="text-4xl mb-4">🌐</div>
-                    <h2 class="text-3xl font-bold mb-4">Grow Network</h2>
-                    <p class="text-gray-300 text-base leading-relaxed">Connect with professionals through our intelligent networking platform.</p>
-                </div>
-                <div class="stats-overlay left">
-                    <div class="stat-item">
-                        <div class="stat-label">Connections</div>
-                        <div class="stat-value">100K</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Success Rate</div>
-                        <div class="stat-value">92%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="card mb-12" data-index="4">
-            <div class="card-content max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative">
-                <img class="card-image" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Skill Builder">
-                <div class="card-text">
-                    <div class="text-4xl mb-4">🧠</div>
-                    <h2 class="text-3xl font-bold mb-4">AI Skill Builder</h2>
-                    <p class="text-gray-300 text-base leading-relaxed">Our AI analyzes your work and suggests targeted learning to keep you ahead.</p>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat-item">
-                        <div class="stat-label">Accuracy</div>
-                        <div class="stat-value">96%</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Growth</div>
-                        <div class="stat-value">3x</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="card mb-12" data-index="5">
-            <div class="card-content max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative">
-                <img class="card-image left" src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Smart Matching">
-                <div class="card-text right">
-                    <div class="text-4xl mb-4">✨</div>
-                    <h2 class="text-3xl font-bold mb-4">Smart Matching</h2>
-                    <p class="text-gray-300 text-base leading-relaxed">Find perfect collaborators with our advanced matching system.</p>
-                </div>
-                <div class="stats-overlay left">
-                    <div class="stat-item">
-                        <div class="stat-label">Matches</div>
-                        <div class="stat-value">85%</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Success</div>
-                        <div class="stat-value">4.9★</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="card mb-12" data-index="6">
-            <div class="card-content max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative">
-                <img class="card-image" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Discover Talent">
-                <div class="card-text">
-                    <div class="text-4xl mb-4">🔍</div>
-                    <h2 class="text-3xl font-bold mb-4">Discover Talent</h2>
-                    <p class="text-gray-300 text-base leading-relaxed">Browse curated collections of exceptional creatives across all disciplines.</p>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat-item">
-                        <div class="stat-label">Talents</div>
-                        <div class="stat-value">25K+</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Quality</div>
-                        <div class="stat-value">4.7★</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- --------------------------------------------------------------------------------------------------------------- -->    
     <!-- About Us Section --> 
     <section id="AboutUS" class="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden py-20">
         <!-- Chnage 9 -->
@@ -2304,12 +1715,6 @@ style.textContent = `
 document.head.appendChild(style);
 
 //----------------------------------------------------------------------------------------
-
-
-
-
-
-
         //2 nd page change
         document.addEventListener('DOMContentLoaded', () => {
             const scrollItems = document.querySelectorAll('.scroll-item');

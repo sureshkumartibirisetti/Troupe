@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TroupeX - Built for the Originals</title>
+
+    <meta name="description" content="TroupeX is an end-to-end ecosystem for project-based professionals to find work, upskill, collaborate, and grow.">
+    <meta name="keywords" content="TroupeX, Troupe, portfolio, creative community, talent network, AI skill builder, project collaboration, freelance, jobs">
+
+    <meta property="og:title" content="TroupeX - Built for the Originals">
+    <meta property="og:description" content="An ecosystem to find work, upskill, collaborate and grow for the project-based world.">
+    <meta property="og:url" content="https://www.troupex.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://placehold.co/1200x630/000000/ffffff?text=TroupeX">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'helvetica': ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ===== Helvetica Neue Font Import and Base Styles ===== */
+        @import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
+        
+        * {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            overflow-x: hidden;
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
+        /* ===== Universal Background Glow Effects ===== */
+        .background-glows11 {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .glow11 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(105, 27, 178, 0.3) 0%, transparent 70%);
+            filter: blur(100px);
+            animation: moveGlow 20s infinite ease-in-out alternate;
+        }
+
+        .glow11:nth-child(1) {
+            top: 0%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .glow11:nth-child(2) {
+            bottom: 0%;
+            right: 0%;
+            animation-delay: 5s;
+        }
+
+        .glow11:nth-child(3) {
+            top: 20%;
+            right: 80%;
+            animation-delay: 10s;
+        }
+        
+        @keyframes moveGlow {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(200px, -200px); }
+        }
+        
+        /* ===== Section Breaks and Backgrounds ===== */
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(159, 122, 234, 0.5), transparent);
+            margin: 0;
+        }
+
+        .section-background {
+            position: relative;
+            background: #000000;
+        }
+
+        .section-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(159, 122, 234, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* ===== Hero Section ===== */
+        #hero-section {
+            background-color: #000000;
+            position: relative;
+        }
+
+        /* ===== Enhanced Premium Glassmorphism Effects ===== */
+        .glass-card {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(159, 122, 234, 0.3);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 8px 32px 0 rgba(159, 122, 234, 0.1);
+            border-radius: 10px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+        
+        .glass-card:hover::before {
+            left: 100%;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.7), 0 8px 24px 0 rgba(159, 122, 234, 0.4);
+            border-color: rgba(159, 122, 234, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== Enhanced Card Animations ===== */
+        .glass-card {
+            animation: cardFloat 6s ease-in-out infinite alternate;
+        }
+        
+        .glass-card:nth-child(even) {
+            animation-delay: 1s;
+        }
+        
+        .glass-card:nth-child(3n) {
+            animation-delay: 2s;
+        }
+        
+        @keyframes cardFloat {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-10px) rotate(1deg); }
+        }
+        
+        .glass-card:hover {
+            animation-play-state: paused;
+        }
+
+        /* ===== Cards Section Styling ===== */
+        #cards-section {
+            background: #000000;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        #cards-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(159, 122, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* ===== Transparent Navigation ===== */
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.1) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scrolled-header {
+            background: rgba(0, 0, 0, 0.9) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== Header Animations ===== */
+        .header {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, #9f7aea, #10b981);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* ===== Hero Video Enhancements ===== */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            object-fit: cover;
+            filter: brightness(0.4);
+            transition: filter 0.3s ease;
+        }
+
+        @media (max-width: 767px) {
+            .hero-video {
+                min-width: 100%;
+                min-height: 100%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+                transform: none;
+            }
+        }
+        
+        /* ===== Enhanced Typing Effect ===== */
+        #typing-headline {
+            background: linear-gradient(135deg, #ffffff 0%, #9f7aea 50%, #10b981 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        @media (max-width: 640px) {
+            #typing-headline {
+                font-size: clamp(1.8rem, 10vw, 3rem);
+                line-height: 1.2;
+            }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #typing-headline::after {
+            content: '|';
+            font-weight: 20;
+            animation: blink 1s step-end infinite;
+            color: #9f7aea;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .typing-done::after {
+            display: none;
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== Navigation Button Animation ===== */
+        .btn.nav-contact {
+            position: relative;
+            width: 150px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn.nav-contact a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 10px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            overflow: hidden;
+            color: #fff;
+            font-weight: 500;
+            z-index: 1;
+            transition: 0.5s;
+            backdrop-filter: blur(15px);
+        }
+
+        .btn.nav-contact:hover a {
+            letter-spacing: 3px;
+        }
+
+        .btn.nav-contact a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+            transform: skewX(45deg) translateX(0);
+            transition: 0.5s;
+        }
+
+        .btn.nav-contact:hover a::before {
+            transform: skewX(45deg) translateX(200px);
+        }
+
+        .btn.nav-contact::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -5px;
+            width: 30px;
+            height: 10px;
+            background: #673b66;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #673b66, 0 0 15px #673b66, 0 0 30px #673b66, 0 0 60px #673b66;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+
+        .btn.nav-contact::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -5px;
+            width: 30px;
+            height: 10px;
+            background: #673b66;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #673b66, 0 0 15px #673b66, 0 0 30px #673b66, 0 0 60px #673b66;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+
+        .btn.nav-contact:hover::before {
+            bottom: 0;
+            height: 50%;
+            width: 80%;
+            border-radius: 30px;
+        }
+
+        .btn.nav-contact:hover::after {
+            top: 0;
+            height: 50%;
+            width: 80%;
+            border-radius: 30px;
+        }
+
+        /* ===== Rewards Section ===== */
+        .scroll-container {
+            display: flex;
+            min-height: 200vh;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .left-content {
+            position: sticky;
+            top: 0;
+            width: 50%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 10;
+        }
+
+        .right-content {
+            width: 50%;
+            padding-left: 4rem;
+            padding-top: 30vh;
+            padding-bottom: 20vh;
+        }
+
+        .scroll-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-in, transform 1s ease-in;
+            margin-bottom: 20vh;
+        }
+
+        .scroll-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .rewards-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            object-fit: cover;
+            filter: brightness(0.4) contrast(1.1) saturate(1.2);
+        }
+
+        @media (max-width: 767px) {
+            .rewards-bg {
+                top: 0;
+                left: 0;
+                transform: none;
+                width: 100%;
+                height: 100%;
+                min-width: 100%;
+                min-height: 100%;
+                object-fit: cover;
+            }
+            
+            .scroll-container {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .left-content, .right-content {
+                width: 100%;
+                position: static;
+                height: auto;
+                padding: 2rem;
+            }
+        }
+        
+        /* ===== About Section Enhancement ===== */
+        #AboutUS {
+            background: #000000;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #AboutUS::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(159, 122, 234, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        /* ===== About Section Carousel Enhancement ===== */
+        .carousel-line {
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+        }
+
+        #text-wrapper {
+            perspective: 1000px;
+        }
+
+        .carousel-line p {
+            font-size: clamp(1.2rem, 4vw, 2.5rem) !important;
+            line-height: 1.4 !important;
+            font-weight: 300 !important;
+            letter-spacing: -0.02em;
+        }
+
+        /* ===== Download Button & Waitlist Button ===== */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .apple-btn,.waitlist-btn {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .apple-btn:hover,.waitlist-btn:hover {
+            background: linear-gradient(90deg, #9f7aea, #10b981);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        /* ===== Enhanced Waitlist Section ===== */
+        .waitlist-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            position: relative;
+            background: #000000;
+        }
+
+        .waitlist-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(159, 122, 234, 0.4) 0%, transparent 50%), 
+                        radial-gradient(circle at 70% 60%, rgba(16, 185, 129, 0.4) 0%, transparent 50%);
+            animation: waitlistBackgroundFlow 12s ease-in-out infinite alternate;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        @keyframes waitlistBackgroundFlow {
+            0% {
+                background-position: 0% 0%, 100% 100%;
+            }
+            50% {
+                background-position: 100% 0%, 0% 100%;
+            }
+            100% {
+                background-position: 0% 100%, 100% 0%;
+            }
+        }
+
+        .waitlist-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .waitlist-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .waitlist-left-content {
+            z-index: 10;
+        }
+
+        .waitlist-left-content h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #9f7aea 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .waitlist-left-content p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: #d1d5db;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            color: #9ca3af;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: featureSlideIn 0.6s ease forwards;
+        }
+
+        .feature-list li:nth-child(1) { animation-delay: 0.1s; }
+        .feature-list li:nth-child(2) { animation-delay: 0.2s; }
+        .feature-list li:nth-child(3) { animation-delay: 0.3s; }
+        .feature-list li:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes featureSlideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .feature-list li::before {
+            content: '✦';
+            color: #9f7aea;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+
+        .waitlist-glass-card {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 2px solid rgba(159, 122, 234, 0.3);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: cardGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes cardGlow {
+            0% {
+                box-shadow: 
+                    0 25px 50px rgba(0, 0, 0, 0.6),
+                    0 0 30px rgba(159, 122, 234, 0.3),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            }
+            100% {
+                box-shadow: 
+                    0 30px 60px rgba(0, 0, 0, 0.7),
+                    0 0 50px rgba(159, 122, 234, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        .waitlist-glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(159, 122, 234, 0.5);
+        }
+
+        .thank-you-glass-card {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(16, 185, 129, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .waitlist-form-input {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(159, 122, 234, 0.3);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            color: white;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .waitlist-form-input:focus {
+            outline: none;
+            border-color: #9f7aea;
+            box-shadow: 0 0 0 4px rgba(159, 122, 234, 0.15);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .waitlist-form-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .waitlist-submit-btn {
+            background: linear-gradient(135deg, #9f7aea 0%, #7c3aed 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            color: white;
+            font-weight: 600;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 20px rgba(159, 122, 234, 0.3);
+            width: 100%;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .waitlist-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(159, 122, 234, 0.4);
+            background: linear-gradient(135deg, #7c3aed 0%, #9f7aea 100%);
+        }
+
+        .badge {
+            background: rgba(55, 65, 81, 0.8);
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 auto 1.5rem auto;
+            justify-content: center;
+        }
+
+        .badge .highlight {
+            color: #a855f7;
+        }
+
+        /* ===== Mobile Menu Enhancement ===== */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-item {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu.open .mobile-menu-item {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-menu-item:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu-item:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu-item:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu-item:nth-child(4) { transition-delay: 0.4s; }
+
+        /* ===== Enhanced Footer with Premium Animations ===== */
+        footer {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            position: relative;
+            overflow: hidden;
+            background: #000000;
+            background-size: 400% 400%;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, rgba(159, 122, 234, 0.05) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 50%, rgba(16, 185, 129, 0.05) 100%);
+            animation: footerGradientMove 8s ease infinite;
+            pointer-events: none;
+        }
+
+        @keyframes footerGradientMove {
+            0%, 100% {
+                background-position: 0% 50%, 100% 50%;
+            }
+            50% {
+                background-position: 100% 50%, 0% 50%;
+            }
+        }
+        
+        .footer-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(159, 122, 234, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 20s linear infinite;
+        }
+
+        .particle:nth-child(odd) {
+            background: rgba(16, 185, 129, 0.5);
+            animation-duration: 25s;
+        }
+
+        .particle:nth-child(3n) {
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.4);
+            animation-duration: 30s;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        footer h3, footer h4 {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            font-weight: 600 !important;
+            position: relative;
+            z-index: 10;
+        }
+
+        footer p, footer a, footer li {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+            font-weight: 400 !important;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ===== Social Media Icons ===== */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(159, 122, 234, 0.1);
+            border: 1px solid rgba(159, 122, 234, 0.3);
+            border-radius: 50%;
+            color: #9ca3af;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+
+        .social-icon:hover {
+            background: rgba(159, 122, 234, 0.2);
+            border-color: #9f7aea;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ===== Utility Classes ===== */
+        .hidden {
+            display: none;
+        }
+
+        /* ===== Scroll Indicator ===== */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #9f7aea, #10b981);
+            transform-origin: 0%;
+            z-index: 1000;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* ===== Enhanced 3D Card Animations ===== */
+        .glass-card {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        
+        .glass-card:hover {
+            animation-play-state: paused;
+            transform: translateY(-15px) rotateX(10deg) rotateY(-5deg) scale(1.05);
+        }
+        
+        /* Ripple effect */
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        /* ===== Responsive Design Improvements ===== */
+        @media (max-width: 1024px) {
+            .glass-card {
+                padding: 1.5rem;
+            }
+            
+            .waitlist-glass-card {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .glass-card {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-video {
+                object-position: center;
+            }
+            
+            .waitlist-glass-card {
+                padding: 1.5rem;
+            }
+            
+            .feature-list li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Background Glow Effects -->
+    <div class="background-glows11">
+        <div class="glow11"></div>
+        <div class="glow11"></div>
+        <div class="glow11"></div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scroll-indicator"></div>
+
+    <!-- Hero Section -->
+    <section id="hero-section" class="relative h-screen w-full flex flex-col overflow-hidden">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="./Assets/GalaxyMainPage1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+       
+        <div class="absolute inset-0 bg-black/30 z-0"></div>
+
+        <!-- Header -->
+        <header id="main-header" class="header glass-nav fixed top-0 left-0 w-full z-40 px-6 py-4">
+            <nav class="container mx-auto flex justify-between items-center">
+                <a href="#hero-section" class="logo-link">
+                    <img src="./Assets/troupeX-logo2.jpg" alt="TroupeX Logo" class="logo h-12 transition-all duration-300">
+                </a>
+                <ul class="hidden md:flex items-center space-x-8 text-gray-300">
+                    <li><a href="#rewards-section" class="nav-link hover:text-purple-300 transition-colors px-4 py-2">Overview</a></li>
+                    <li><a href="#overview" class="nav-link hover:text-purple-300 transition-colors px-4 py-2">How it works</a></li>
+                
+                    <li class="btn nav-contact">
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-purple-300 transition-colors" aria-label="Open mobile menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="flex justify-end p-6">
+                <button id="close-menu-btn" class="text-white hover:text-purple-300 transition-colors" aria-label="Close mobile menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <ul class="flex flex-col items-center justify-center space-y-8 text-gray-300 text-2xl h-full">
+                <li class="mobile-menu-item"><a href="#AboutUS" class="hover:text-purple-300 transition-colors">About</a></li>
+                <li class="mobile-menu-item"><a href="#rewards-section" class="hover:text-purple-300 transition-colors">Overview</a></li>
+                <li class="mobile-menu-item"><a href="#overview" class="hover:text-purple-300 transition-colors">How it works</a></li>
+                <li class="mobile-menu-item"><a href="#contact" class="hover:text-purple-300 transition-colors">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Hero Content -->
+        <main class="relative flex-grow flex flex-col items-center justify-center text-center px-4 z-10">
+            <div class="relative max-w-6xl mx-auto">
+                <h1 id="typing-headline" class="font-black tracking-tight mb-6 px-4"></h1>
+                <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 opacity-0 animate-fadeInUp leading-relaxed px-4">
+                    Troupe is an end-to-end ecosystem to find work, upskill, collaborate and grow for the project-based world.
+                </p>
+                
+                <div class="mt-8 flex flex-wrap justify-center gap-4 px-4">
+                    <!-- Apple Download Button -->
+                    <a href="#apple-download" class="cta-btn apple-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 384 512">
+                            <path d="M318.7 268.6c-.2-36.6 16-64.4 49-84.8-18.1-26-45.3-40.4-82.6-43.2-34.6-2.6-72.4 20.3-86.3 20.3-14.2 0-47.3-19.5-73.2-19-37.6.5-72.4 21.8-91.7 55.2-39.2 67.8-10.1 167.8 28.1 223.1 18.5 26.8 40.4 56.7 69.1 55.6 27.8-1.1 38.4-17.9 72-17.9 33.2 0 43.2 17.9 72.9 17.4 29.9-.5 49.1-27.3 67.5-54.1 21.3-31 30.2-61.1 30.4-62.6-.6-.2-58.2-22.3-58.4-88.1zM246.5 92.3c17.5-21.2 29.4-50.6 26.2-79.9-25.3 1-55.9 16.8-74.1 38-16.3 18.9-30.8 49.2-27 77.7 28.2 2.2 57.3-14.3 74.9-35.8z"/>
+                        </svg>
+                        Download from TestFlight
+                    </a>
+                    <!-- Join Waitlist (Android) -->
+                    <a href="#join-waitlist-section" class="cta-btn waitlist-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="#f5f5f5" viewBox="0 0 553.048 553.048">
+                            <g>
+                                <path d="M76.774,179.141c-9.529,0-17.614,3.323-24.26,9.969c-6.646,6.646-9.97,14.621-9.97,23.929v142.914 c0,9.541,3.323,17.619,9.97,24.266c6.646,6.646,14.731,9.97,24.26,9.97c9.522,0,17.558-3.323,24.101-9.97 c6.53-6.646,9.804-14.725,9.804-24.266V213.039c0-9.309-3.323-17.283-9.97-23.929C94.062,182.464,86.082,179.141,76.774,179.141z"/>
+                                <path d="M351.972,50.847L375.57,7.315c1.549-2.882,0.998-5.092-1.658-6.646c-2.883-1.34-5.098-0.661-6.646,1.989l-23.928,43.88 c-21.055-9.309-43.324-13.972-66.807-13.972c-23.488,0-45.759,4.664-66.806,13.972l-23.929-43.88 c-1.555-2.65-3.77-3.323-6.646-1.989c-2.662,1.561-3.213,3.764-1.658,6.646l23.599,43.532 c-23.929,12.203-42.987,29.198-57.167,51.022c-14.18,21.836-21.273,45.698-21.273,71.628h307.426 c0-25.924-7.094-49.787-21.273-71.628C394.623,80.045,375.675,63.05,351.972,50.847z M215.539,114.165 c-2.552,2.558-5.6,3.831-9.143,3.831c-3.55,0-6.536-1.273-8.972-3.831c-2.436-2.546-3.654-5.582-3.654-9.137 c0-3.543,1.218-6.585,3.654-9.137c2.436-2.546,5.429-3.819,8.972-3.819s6.591,1.273,9.143,3.819 c2.546,2.558,3.825,5.594,3.825,9.137C219.357,108.577,218.079,111.619,215.539,114.165z M355.625,114.165 c-2.441,2.558-5.434,3.831-8.971,3.831c-3.551,0-6.598-1.273-9.145-3.831c-2.551-2.546-3.824-5.582-3.824-9.137 c0-3.543,1.273-6.585,3.824-9.137c2.547-2.546,5.594-3.819,9.145-3.819c3.543,0,6.529,1.273,8.971,3.819 c2.438,2.558,3.654,5.594,3.654,9.137C359.279,108.577,358.062,111.619,355.625,114.165z"/>
+                                <path d="M123.971,406.804c0,10.202,3.543,18.838,10.63,25.925c7.093,7.087,15.729,10.63,25.924,10.63h24.596l0.337,75.454 c0,9.528,3.323,17.619,9.969,24.266s14.627,9.97,23.929,9.97c9.523,0,17.613-3.323,24.26-9.97s9.97-14.737,9.97-24.266v-75.447 h45.864v75.447c0,9.528,3.322,17.619,9.969,24.266s14.73,9.97,24.26,9.97c9.523,0,17.613-3.323,24.26-9.97 s9.969-14.737,9.969-24.266v-75.447h24.928c9.969,0,18.494-3.544,25.594-10.631c7.086-7.087,10.631-15.723,10.631-25.924V185.45 H123.971V406.804z"/>
+                                <path d="M476.275,179.141c-9.309,0-17.283,3.274-23.93,9.804c-6.646,6.542-9.969,14.578-9.969,24.094v142.914 c0,9.541,3.322,17.619,9.969,24.266s14.627,9.97,23.93,9.97c9.523,0,17.613-3.323,24.26-9.97s9.969-14.725,9.969-24.266V213.039 c0-9.517-3.322-17.552-9.969-24.094C493.888,182.415,485.798,179.141,476.275,179.141z"/>
+                            </g>
+                        </svg>
+                        Join Waitlist
+                    </a>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Rewards Section -->
+    <section id="rewards-section" class="section-background relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+        <img src="./Assets/purple-background-1.jpg" alt="Background" class="rewards-bg" />
+        <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+        <div class="scroll-container">
+            <div class="left-content">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    Unite your vision with a nexus of Visionary Creators.
+                </h1>
+            </div>
+
+            <div class="right-content space-y-14">
+                <div class="scroll-item">
+                    <h2 class="text-2xl md:text-3xl font-bold">The world's biggest creative troupe</h2>
+                    <p class="mt-2 text-gray-400">TroupeX brings for filmmakers, designers, musicians, writers and all other visionaries, together to break silos and drive impossible collaborations.</p>
+                </div>
+                <div class="scroll-item">
+                    <h2 class="text-2xl md:text-3xl font-bold">The world's biggest creative troupe</h2>
+                    <p class="mt-2 text-gray-400">TroupeX brings for filmmakers, designers, musicians, writers and all other visionaries, together to break silos and drive impossible collaborations.</p>
+                </div>
+                <div class="scroll-item">
+                    <h2 class="text-2xl md:text-3xl font-bold">The collaboration you never imagined</h2>
+                    <p class="mt-2 text-gray-400">Join TroupeX and move further, faster. Every connection you make opens doors to new creative possibilities.</p>
+                </div>
+                <div class="scroll-item">
+                    <h2 class="text-2xl md:text-3xl font-bold">Do more with your creativity</h2>
+                    <p class="mt-2 text-gray-400">Discover collaborators across disciplines, tap into world-class tools, and join projects that redefine what's possible.</p>
+                </div>
+                <div class="scroll-item">
+                    <h2 class="text-2xl md:text-3xl font-bold">Work with the best. From anywhere.</h2>
+                    <p class="mt-2 text-gray-400">Build films, campaigns, albums, or movements with top-tier talent, no matter where you are.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Enhanced Cards Section -->
+    <section id="cards-section" class="section-background px-6 py-20 relative">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <!-- Creators Row -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
+                <div class="flex items-center justify-center lg:justify-start lg:items-center">
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-3xl lg:text-4xl font-black tracking-widest uppercase bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                            Creators
+                        </h2>
+                        <div class="w-20 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto lg:mx-0 mt-3 rounded-full"></div>
+                    </div>
+                </div>
+                
+                <div class="glass-card group">
+                    <div class="glass-content">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="glass-icon">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-purple-300 transition-colors duration-300">
+                            Create your Portfolio
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Showcase your work, skills and achievements with our intuitive portfolio builder
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card group">
+                    <div class="glass-content">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="glass-icon">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                            Grow your Network
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Connect with your tribe, mentors and industry leaders in your field
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card group">
+                    <div class="glass-content">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="glass-icon">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-indigo-300 transition-colors duration-300">
+                            Upskill with AI
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Learn smarter, faster and stay ahead in your craft with AI-powered learning
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organizations Row -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
+                <div class="flex items-center justify-center lg:justify-start lg:items-center">
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-3xl lg:text-4xl font-black tracking-widest uppercase bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                            Organizations
+                        </h2>
+                        <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto lg:mx-0 mt-3 rounded-full"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card group">
+                    <div class="glass-content">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="glass-icon">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-purple-300 transition-colors duration-300">
+                            Post your Projects
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Share opportunities and connect with skilled, verified professionals
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card group">
+                    <div class="glass-content">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="glass-icon">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                            Find the top Talent
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Search and filter to discover the perfect match for your projects
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card group">
+                    <div class="glass-content">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="glass-icon">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-indigo-300 transition-colors duration-300">
+                            AI-driven matching
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Get instant, data-backed recommendations for your specific needs
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- About Us Section --> 
+    <section id="AboutUS" class="section-background h-screen w-full relative flex flex-col items-center justify-center overflow-hidden py-20">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-16 z-10">About Us</h1>
+        <div id="text-wrapper" class="relative w-full max-w-6xl h-[300px] flex flex-col items-center justify-center z-10 px-4">
+            <!-- JS Injects lines here -->
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Join Waitlist Section -->
+    <section id="join-waitlist-section" class="waitlist-section">
+        <!-- Background Video -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-60">
+                <source src="https://images.pexels.com/videos/3141200/pexels-video-3141200-uhd_2560_1440_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Enhanced Overlay -->
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+        <!-- Main Container -->
+        <div class="relative z-20 waitlist-container">
+            <!-- Left Side: Content -->
+            <div class="waitlist-left-content">
+                <h2>Join the Creative Revolution</h2>
+                <p>Be among the first to experience the future of creative collaboration. Get exclusive early access and help shape the platform that will transform how creators work together.</p>
+                
+                <ul class="feature-list">
+                    <li>Early access to all features</li>
+                    <li>Exclusive community membership</li>
+                    <li>Priority support and feedback</li>
+                    <li>Special launch bonuses</li>
+                </ul>
+            </div>
+
+            <!-- Right Side: Waitlist Form -->
+            <div id="waitlist-form-card" class="waitlist-glass-card">
+                <div class="badge text-center">
+                    <span>Soon</span>
+                    <span class="highlight">Launch in Feb 2025</span>
+                </div>
+                
+                <h3 class="text-3xl font-bold mb-6 text-center">Join the Waitlist</h3>
+                <p class="text-gray-300 mb-8 text-center leading-relaxed">
+                    Get exclusive early access and stay updated on launch news.
+                </p>
+                
+                <form id="waitlist-form" class="space-y-6">
+                    <div>
+                        <input 
+                            type="email" 
+                            id="email-input" 
+                            class="waitlist-form-input" 
+                            placeholder="Your Mail Address" 
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="waitlist-submit-btn">
+                        Join Waitlist
+                    </button>
+                </form>
+                
+                <p class="mt-6 text-sm text-gray-400 text-center">Recently Joined Members!</p>
+                <div class="mt-3 flex justify-center -space-x-2">
+                    <img src="https://i.pravatar.cc/40?img=1" class="w-10 h-10 rounded-full border-2 border-purple-500" alt="Avatar 1" />
+                    <img src="https://i.pravatar.cc/40?img=2" class="w-10 h-10 rounded-full border-2 border-purple-500" alt="Avatar 2" />
+                    <img src="https://i.pravatar.cc/40?img=3" class="w-10 h-10 rounded-full border-2 border-purple-500" alt="Avatar 3" />
+                </div>
+            </div>
+
+            <!-- Thank You Card (Hidden initially) -->
+            <div id="thank-you-card" class="thank-you-glass-card hidden">
+                <div class="text-6xl mb-6"></div>
+                <h2 class="text-4xl font-bold mb-4 text-center">Thank You!</h2>
+                <p class="text-gray-300 text-lg leading-relaxed text-center max-w-md">
+                    Your email has been added to the waitlist. We'll be in touch soon with exclusive updates!
+                </p>
+                <div class="mt-6 text-center">
+                    <div class="inline-flex items-center px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full">
+                        <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-green-400 font-medium">Successfully Added</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Enhanced Footer -->
+    <footer id="contact" class="section-background text-gray-400 py-16 px-6 border-t border-gray-800 relative">
+        <!-- Animated Background Elements -->
+        <div class="footer-particles">
+            <div class="particle" style="left: 5%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 15%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 25%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 35%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 45%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 55%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 65%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 75%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 85%; animation-delay: 7s;"></div>
+            <div class="particle" style="left: 95%; animation-delay: 9s;"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-12 mb-12">
+                <!-- Company Info -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-white font-bold text-2xl mb-6">TroupeX</h3>
+                    <div class="mb-8">
+                        <p class="mb-4 leading-relaxed text-lg">Hyderabad, India.</p>
+                        <p class="mb-2 text-lg">Phone: <span class="text-white font-semibold">+91 7075190397</span></p>
+                        <p class="text-lg">Email: <a href="mailto:support@troupex.com" class="text-white hover:text-purple-300 transition-colors font-semibold">support@troupex.com</a></p>
+                    </div>
+
+                    <!-- Social Media Icons -->
+                    <div class="mb-8">
+                        <h4 class="text-white font-semibold mb-4 text-lg">Social</h4>
+                        <div class="flex justify-center md:justify-start gap-2 mb-8">
+                            <a href="#" class="social-icon" aria-label="Facebook">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Instagram">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986s11.987-5.368 11.987-11.986C24.014 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.348-1.051-2.348-2.348s1.051-2.348 2.348-2.348 2.348 1.051 2.348 2.348-1.051 2.348-2.348 2.348zm7.718 0c-1.297 0-2.348-1.051-2.348-2.348s1.051-2.348 2.348-2.348c1.297 0 2.348 1.051 2.348 2.348s-1.051 2.348-2.348 2.348z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/company/troupex/" class="social-icon" aria-label="LinkedIn">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="YouTube">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Legal -->
+                    <div>
+                        <h4 class="text-white font-semibold mb-4 text-lg">Legal</h4>
+                        <ul class="space-y-3 text-lg">
+                            <li><a href="#" class="hover:text-white transition-colors hover:translate-x-2 inline-block">Terms of service</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors hover:translate-x-2 inline-block">Privacy policy</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors hover:translate-x-2 inline-block">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="text-center pt-8 border-t border-gray-800 text-sm text-gray-500">
+                © 2024 TroupeX. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global Variables
+        let isLoaded = false;
+
+        // Enhanced scroll animations and card interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for enhanced card animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Enhanced card interactions
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.style.animationPlayState = 'paused';
+                observer.observe(card);
+
+                // Advanced mouse tracking for 3D effect
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 8;
+                    const rotateY = (centerX - x) / 8;
+                    
+                    card.style.transform = `translateY(-15px) scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                    card.style.boxShadow = `${(centerX - x) / 4}px ${(y - centerY) / 4}px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(159, 122, 234, 0.4)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1) rotateX(0deg) rotateY(0deg)';
+                    card.style.boxShadow = '0 1px 4px rgba(0, 0, 0, 0.6), 0 8px 32px 0 rgba(159, 122, 234, 0.1)';
+                });
+
+                // Enhanced click ripple effect
+                card.addEventListener('click', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const ripple = document.createElement('div');
+                    ripple.className = 'ripple';
+                    ripple.style.left = `${x - 25}px`;
+                    ripple.style.top = `${y - 25}px`;
+                    ripple.style.width = '50px';
+                    ripple.style.height = '50px';
+                    
+                    card.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+
+        // Rewards section scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollItems = document.querySelectorAll('.scroll-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            scrollItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+
+        // Smooth Scroll Indicator
+        function updateScrollIndicator() {
+            const scrollIndicator = document.getElementById('scroll-indicator');
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (window.scrollY / totalHeight) * 100;
+            scrollIndicator.style.transform = `scaleX(${progress / 100})`;
+        }
+
+        // Initialize All Animations on Load
+        document.addEventListener('DOMContentLoaded', function() {
+            isLoaded = true;
+            initializeAnimations();
+        });
+
+        // Initialize All Animations
+        function initializeAnimations() {
+            typewriterEffect();
+            setupAboutCarousel();
+            setupScrollObserver();
+            setupCardObserver();
+            setupMobileMenu();
+            setupWaitlistForm();
+        }
+
+        // Header Scroll Effect
+        function handleHeaderScroll() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled-header');
+            } else {
+                header.classList.remove('scrolled-header');
+            }
+        }
+
+        // Enhanced Typewriter Effect with better responsive handling
+        function typewriterEffect() {
+            const headline = document.getElementById('typing-headline');
+            const text = "Built for the Originals.";
+            let charIndex = 0;
+            headline.innerHTML = '';
+
+            function type() {
+                if (charIndex < text.length) {
+                    headline.innerHTML += text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 120);
+                } else {
+                    headline.classList.add('typing-done');
+                }
+            }
+            setTimeout(type, 500);
+        }
+
+        // About Us Carousel
+        function setupAboutCarousel() {
+            const lines = [
+                "Building the world's biggest creative troupe, where talent from every corner of culture thrives together.",
+                "Enabling collaboration at scale spanning industries, geographies, and ways of working.",
+                "Giving creators the tools, trust, and momentum to turn ideas into impact.",
+                "Redefining how original work is found, shared, and experienced across mediums and moments.",
+                "Creating foundations where imagination can grow, evolve, and endure through change.",
+                "Advancing a human-led creative world, by placing people and process at the center."
+            ];
+
+            const wrapper = document.getElementById("text-wrapper");
+            let currentIndex = 0;
+
+            function createLine(text, position) {
+                const div = document.createElement("div");
+                div.className = `absolute w-full text-center px-4 carousel-line`;
+
+                if (position === "top") {
+                    div.style.opacity = "0.3";
+                    div.style.transform = "translateY(-120px) scale(0.8)";
+                    div.style.zIndex = "1";
+                } else if (position === "middle") {
+                    div.style.opacity = "1";
+                    div.style.transform = "translateY(0) scale(1)";
+                    div.style.zIndex = "2";
+                } else if (position === "bottom") {
+                    div.style.opacity = "0.3";
+                    div.style.transform = "translateY(120px) scale(0.8)";
+                    div.style.zIndex = "1";
+                }
+
+                div.innerHTML = `<p>${text}</p>`;
+                return div;
+            }
+
+            function updateCarousel() {
+                wrapper.innerHTML = "";
+
+                const prev = lines[(currentIndex - 1 + lines.length) % lines.length];
+                const curr = lines[currentIndex];
+                const next = lines[(currentIndex + 1) % lines.length];
+
+                wrapper.appendChild(createLine(prev, "top"));
+                wrapper.appendChild(createLine(curr, "middle"));
+                wrapper.appendChild(createLine(next, "bottom"));
+
+                currentIndex = (currentIndex + 1) % lines.length;
+            }
+
+            updateCarousel();
+            setInterval(updateCarousel, 3000);
+        }
+
+        // Card Observer for Sticky Scrolling
+        function setupCardObserver() {
+            const cards = document.querySelectorAll('.card');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -40% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        cards.forEach(card => card.classList.remove('active'));
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+
+            if (cards.length > 0) {
+                cards[0].classList.add('active');
+            }
+        }
+
+        // Mobile Menu Setup
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closeMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    document.body.style.overflow = 'auto';
+                });
+
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+
+                mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === mobileMenu) {
+                        mobileMenu.classList.remove('open');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        }
+
+        // Waitlist Form Handler
+        function setupWaitlistForm() {
+            const waitlistForm = document.getElementById('waitlist-form');
+            if (waitlistForm) {
+                waitlistForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    const waitlistFormCard = document.getElementById('waitlist-form-card');
+                    const thankYouCard = document.getElementById('thank-you-card');
+
+                    if (waitlistFormCard && thankYouCard) {
+                        waitlistFormCard.classList.add('hidden');
+                        thankYouCard.classList.remove('hidden');
+                    }
+                });
+            }
+        }
+
+        // General Scroll Observer
+        function setupScrollObserver() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '-10% 0px -10% 0px',
+                threshold: 0
+            };
+        }
+
+        // Event Listeners
+        window.addEventListener('scroll', function() {
+            if (isLoaded) {
+                handleHeaderScroll();
+                updateScrollIndicator();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize scroll indicator
+        window.addEventListener('scroll', updateScrollIndicator);
+        updateScrollIndicator();
+    </script>
+</body>
+</html>

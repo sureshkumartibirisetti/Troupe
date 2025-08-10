@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TroupeX - Built for the Originals</title>
+    <title>Premium TroupeX Website with Helvetica Neue</title>
 
     <meta name="description" content="TroupeX is an end-to-end ecosystem for project-based professionals to find work, upskill, collaborate, and grow.">
     <meta name="keywords" content="TroupeX, Troupe, portfolio, creative community, talent network, AI skill builder, project collaboration, freelance, jobs">
@@ -15,105 +15,273 @@
     <meta property="og:image" content="https://placehold.co/1200x630/000000/ffffff?text=TroupeX">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'helvetica': ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 4s ease-in-out infinite alternate',
+                        'fadeInUp': 'fadeInUp 0.8s ease-out forwards',
+                        'fadeInLeft': 'fadeInLeft 0.8s ease-out forwards',
+                        'fadeInRight': 'fadeInRight 0.8s ease-out forwards',
+                        'scaleIn': 'scaleIn 0.6s ease-out forwards',
+                        'slideUp': 'slideUp 0.8s ease-out forwards',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'rotate-glow': 'rotateGlow 8s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        /* ===== General Base Styles ===== */
+        /* ===== HELVETICA NEUE FONT SYSTEM ===== */
+        * {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden; /* Prevent horizontal scrolling on smaller devices */
-            background-color: black;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: #000000;
+            line-height: 1.6;
         }
-        /* Glassmorphism Effect*/
+
+        /* ===== PREMIUM ANIMATIONS ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); }
+            100% { box-shadow: 0 0 40px rgba(147, 51, 234, 0.6); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% { 
+                box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+                border-color: rgba(147, 51, 234, 0.6);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(147, 51, 234, 0.8);
+                border-color: rgba(147, 51, 234, 1);
+            }
+            100% { 
+                box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+                border-color: rgba(147, 51, 234, 0.6);
+            }
+        }
+
+        @keyframes rotateGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes moveGlow {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                transform: translate(50px, -30px) scale(1.1);
+            }
+        }
+
+        /* ===== BACKGROUND GLOW EFFECTS ===== */
         .background-glows {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0;
-    }
-
-  .glow {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(52, 59, 79, 0.6) 0%, transparent 90%);
-    filter: blur(100px);
-    animation: moveGlow 20s infinite ease-in-out alternate;
-  }
-
-  .glow:nth-child(1) {
-    top: 10%;
-    left: 20%;
-    animation-delay: 0s;
-  }
-
-  .glow:nth-child(2) {
-    bottom: 20%;
-    right: 20%;
-    animation-delay: 5s;
-  }
-
-  .glow:nth-child(3) {
-    top: 50%;
-    right: 50%;
-    animation-delay: 10s;
-  }
-
-  @keyframes moveGlow {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
-    100% {
-      transform: translate(50px, -30px) scale(1.1);
-    }
-  }
-        /* Utility class to smoothly scroll to sections */
-        .scroll-smooth {
-            scroll-behavior: smooth;
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
         }
-        
-        /* Glassmorphism Effect */
+
+        .glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.3) 0%, transparent 70%);
+            filter: blur(100px);
+            animation: moveGlow 20s infinite ease-in-out alternate;
+        }
+
+        .glow:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .glow:nth-child(2) {
+            bottom: 20%;
+            right: 20%;
+            animation-delay: 5s;
+        }
+
+        .glow:nth-child(3) {
+            top: 50%;
+            right: 50%;
+            animation-delay: 10s;
+        }
+
+        /* ===== GLASSMORPHISM EFFECTS ===== */
         .glass-card {
-            background: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
-            backdrop-filter: blur(12px); /* Blur effect */
-            -webkit-backdrop-filter: blur(12px); /* For Safari support */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Subtle shadow */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             border-radius: 24px;
+            transition: all 0.3s ease;
         }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px 0 rgba(147, 51, 234, 0.2);
+        }
+
         .glass-nav {
             background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             transition: all 0.3s ease-in-out;
         }
+
         .scrolled-header {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
         }
 
-        /* ===== Responsive Header Styles ===== */
+        /* ===== PREMIUM HOVER EFFECTS ===== */
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hover-glow {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hover-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .hover-glow:hover::before {
+            left: 100%;
+        }
+
+        /* ===== HEADER STYLES ===== */
         .header {
             transition: all 0.3s ease-in-out;
         }
-        .scrolled-header .logo {
-            height: 2.5rem; /* Make logo smaller */
-        }
-        .scrolled-header .nav-links li {
-            padding-top: 0;
-            padding-bottom: 0;
+
+        .logo {
+            transition: all 0.3s ease;
         }
 
-        /* ===== Preloader ===== */
-        #preloader {
-            background-color: black;
-            transition: opacity 1s ease-in-out;
-            z-index: 50; /* Ensure preloader is on top */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
         }
-        
-        /* ===== Hero Section Video & Mobile Fallback ===== */
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #9333ea, #a855f7);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ===== PRELOADER ===== */
+        #preloader {
+            background-color: #000000;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 9999;
+        }
+
+        .preloader-logo {
+            animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+        }
+
+        /* ===== HERO SECTION ===== */
         .hero-video {
             position: absolute;
             top: 50%;
@@ -126,8 +294,9 @@
             z-index: -1;
             object-fit: cover;
         }
+
         @media (max-width: 767px) {
-             .hero-video {
+            .hero-video {
                 min-width: 100%;
                 min-height: 100%;
                 width: 100%;
@@ -138,95 +307,57 @@
                 transform: none;
             }
         }
-        
-        /* ===== Hero Section Typing Effect ===== */
+
+        /* ===== TYPING EFFECT ===== */
         #typing-headline::after {
             content: '|';
-            font-weight: 200;
+            font-weight: 300;
             animation: blink 1s step-end infinite;
         }
+
         @keyframes blink {
             from, to { color: transparent }
             50% { color: white }
         }
+
         .typing-done::after {
             display: none;
         }
-        .animate-fadeInUp {
-            animation: fadeInUp 1s ease-out 1.5s forwards;
-            opacity: 0;
-        }
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-            }
+
+        /* ===== CONTACT BUTTON ANIMATION ===== */
+        .contact-btn {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            transition: all 0.3s ease;
         }
 
-        /* ===== Contact Button Animation ===== */
         .contact-btn::before {
             content: '';
             position: absolute;
-            z-index: 1;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background: conic-gradient(from 180deg at 50% 50%, #00000000 0%, #0000004D 20%, #00000000 25%);
-            animation: rotate-inner-shadow 4s linear infinite;
-        }
-        @keyframes rotate-inner-shadow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        /* ===== Letter Reveal Animation ===== */
-       .carousel-line {
-      transition: all 0.8s ease;
-    }
-
-    /*.glow {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border-radius: 9999px;
-      background: radial-gradient(circle, rgba(115, 136, 199, 0.6) 0%, transparent 70%);
-      filter: blur(100px);
-      z-index: 0;
-    }*/
-        /* ===== Letter Reveal Animation ===== */
-        /* .char {
-            color: rgb(51, 51, 51);
-            transition: color 0.4s ease-in-out;
-            display: inline-block;
-        }
-        .line.is-active .char {
-            color: rgb(229, 231, 235);
-        }
-        .line.is-active .char:nth-child(1) { transition-delay: 0.03s; }
-        .line.is-active .char:nth-child(2) { transition-delay: 0.06s; }
-        .line.is-active .char:nth-child(3) { transition-delay: 0.09s; }
-        .line.is-active .char:nth-child(4) { transition-delay: 0.12s; }
-        .line.is-active .char:nth-child(5) { transition-delay: 0.15s; }
-        .line.is-active .char:nth-child(6) { transition-delay: 0.18s; }
-        .line.is-active .char:nth-child(7) { transition-delay: 0.21s; }
-        .line.is-active .char:nth-child(8) { transition-delay: 0.24s; }
-        .line.is-active .char:nth-child(9) { transition-delay: 0.27s; }
-        .line.is-active .char:nth-child(10) { transition-delay: 0.30s; }
-        .line.is-active .char:nth-child(11) { transition-delay: 0.33s; }
-        .line.is-active .char:nth-child(12) { transition-delay: 0.36s; }
-        .line.is-active .char:nth-child(13) { transition-delay: 0.39s; }
-        .line.is-active .char:nth-child(14) { transition-delay: 0.42s; }
-        .line.is-active .char:nth-child(15) { transition-delay: 0.45s; } */
-
-        /* mobile view letter reveal */ 
-        @media (max-width: 767px) {
-            .line {
-                font-size: 1.8rem;
-                line-height: 1.5;
-                padding: 0 1rem;
-            }
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.2), transparent);
+            transition: left 0.5s;
         }
 
-        /* ===== Rewards Section Video & Mobile Fallback ===== */
+        .contact-btn:hover::before {
+            left: 100%;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3);
+        }
+
+        /* ===== CAROUSEL TEXT ANIMATION ===== */
+        .carousel-line {
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* ===== REWARDS SECTION ===== */
         .rewards-video {
             position: absolute;
             top: 50%;
@@ -239,6 +370,7 @@
             z-index: -1;
             object-fit: cover;
         }
+
         @media (max-width: 767px) {
             .rewards-video {
                 top: 0;
@@ -251,31 +383,37 @@
                 object-fit: cover;
             }
         }
-        
-        /* ===== Card Scrolling Section ===== */
-         .card-container {
+
+        /* ===== CARD SCROLLING SECTION ===== */
+        .card-container {
             height: auto;
             padding-bottom: 2rem;
         }
-        
+
         .card {
             position: sticky;
             top: 80px;
-            transition: all 0.3s ease-out;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        
+
         .card-content {
             background: rgba(20, 20, 20, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            backdrop-filter: blur(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        
+
         .card:not(.active) .card-content {
             transform: scale(0.95);
             opacity: 0.7;
         }
-        
+
+        .card.active .card-content {
+            transform: scale(1);
+            opacity: 1;
+            box-shadow: 0 25px 50px rgba(147, 51, 234, 0.2);
+        }
+
         .card-image {
             position: absolute;
             top: 0;
@@ -286,13 +424,13 @@
             border-radius: 0 24px 24px 0;
             transition: all 0.5s ease-out;
         }
-        
+
         .card-image.left {
             left: 0;
             right: auto;
             border-radius: 24px 0 0 24px;
         }
-        
+
         .card-text {
             width: 50%;
             padding: 3rem;
@@ -300,17 +438,17 @@
             position: relative;
             z-index: 10;
         }
-        
+
         .card-text.right {
             margin-left: auto;
         }
-        
+
         .stats-overlay {
             position: absolute;
             bottom: 2rem;
             right: 2rem;
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 16px;
             padding: 1rem;
@@ -321,39 +459,84 @@
             transition: all 0.5s ease-out;
             z-index: 10;
         }
-        
+
         .stats-overlay.left {
             left: 2rem;
             right: auto;
         }
-        
-        .stat-item {
-            text-align: center;
+
+        /* ===== WAITLIST SECTION PREMIUM STYLING ===== */
+        .waitlist-glass-container {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid rgba(147, 51, 234, 0.6);
+            border-radius: 24px;
+            box-shadow: 0 0 30px rgba(147, 51, 234, 0.4);
+            animation: pulse-glow 3s infinite ease-in-out;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .stat-label {
-            font-size: 0.75rem;
-            opacity: 0.8;
-            margin-bottom: 0.25rem;
+
+        .waitlist-glass-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #9333ea, #a855f7, #9333ea);
+            border-radius: 24px;
+            z-index: -1;
+            animation: rotate-glow 4s linear infinite;
         }
-        
-        .stat-value {
-            font-weight: bold;
-            font-size: 1rem;
+
+        .thank-you-glass-container {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid rgba(34, 197, 94, 0.6);
+            border-radius: 24px;
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+            animation: pulse-glow 3s infinite ease-in-out;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        
-        /* Mobile Responsive Styles */
+
+        .thank-you-glass-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #22c55e, #16a34a, #22c55e);
+            border-radius: 24px;
+            z-index: -1;
+            animation: rotate-glow 4s linear infinite;
+        }
+
+        .waitlist-image {
+            border: 2px solid rgba(147, 51, 234, 0.6);
+            box-shadow: 0 0 30px rgba(147, 51, 234, 0.4);
+            animation: pulse-glow 3s infinite ease-in-out;
+            transition: all 0.3s ease;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
             .card {
-                top: 60px; /* Reduce top spacing on mobile */
+                top: 60px;
             }
-            
+
             .card-content {
-                min-height: 500px !important; /* Increase height for mobile */
+                min-height: 500px !important;
                 display: flex;
                 flex-direction: column;
             }
-            
+
             .card-image {
                 position: relative !important;
                 width: 100% !important;
@@ -363,22 +546,22 @@
                 left: 0 !important;
                 right: 0 !important;
             }
-            
+
             .card-image.left {
                 border-radius: 24px 24px 0 0 !important;
             }
-            
+
             .card-text {
                 width: 100% !important;
                 padding: 2rem !important;
                 margin-left: 0 !important;
                 flex-grow: 1;
             }
-            
+
             .card-text.right {
                 margin-left: 0 !important;
             }
-            
+
             .stats-overlay {
                 position: absolute !important;
                 bottom: 1rem !important;
@@ -387,36 +570,22 @@
                 margin: 0 !important;
                 width: auto !important;
             }
-            
+
             .stats-overlay.left {
                 left: 2rem !important;
                 right: 2rem !important;
             }
-            
-            /* Adjust text sizes for mobile */
-            .card-text h2 {
-                font-size: 2rem !important;
-            }
-            
-            .card-text p {
-                font-size: 1rem !important;
-            }
         }
-        
+
         @media (max-width: 480px) {
             .card-content {
                 min-height: 450px !important;
             }
-            
+
             .card-text {
                 padding: 1.5rem !important;
             }
-            
-            .card-text h2 {
-                font-size: 1.75rem !important;
-                margin-bottom: 1rem !important;
-            }
-            
+
             .stats-overlay {
                 left: 1.5rem !important;
                 right: 1.5rem !important;
@@ -424,527 +593,553 @@
                 gap: 0.75rem !important;
             }
         }
-        /* ===== Design Principles Section ===== */
-        .central-orb-container-bw {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9999px;
-            overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.08), inset 0 0 20px rgba(255, 255, 255, 0.05);
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
-        }
-        .central-video-bw {
-            width: 90%;
-            height: 90%;
-            object-fit: cover;
-            border-radius: 9999px;
-        }
-        @media (max-width: 767px) {
-            .central-video-bw {
-                display: none;
-            }
-            .central-orb-container-bw {
-                background-image: url('./Assets/Updated-background-page2.mp4');
-                background-size: cover;
-            }
-        }
 
-        /* ===== Waitlist Form & Newsletter ===== */
-        @keyframes pulse-shadow-green {
-            0% { box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.4); }
-            50% { box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.6); }
-            100% { box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.4); }
-        }
-        @keyframes pulse-shadow-violet {
-            0% { box-shadow: 0 0 5px 2px #9f7aea; }
-            50% { box-shadow: 0 0 15px 5px #9f7aea; }
-            100% { box-shadow: 0 0 5px 2px #9f7aea; }
-        }
-        .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-        }
-        .waitlist-container, .thank-you-card {
-            background-color: black;
-            border-radius: 1rem;
-            padding: 3rem;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-        }
-        .waitlist-container {
-            border: 2px solid #9f7aea;
-            animation: pulse-shadow-violet 3s infinite ease-in-out;
-        }
-        .thank-you-card {
-            border: 2px solid green;
-            animation: pulse-shadow-green 3s infinite ease-in-out;
-        }
-        .thank-you-card h2 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .hidden {
-            display: none;
-        }
+        /* ===== MOBILE MENU ===== */
         .mobile-menu {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 50;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 9998;
             transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .mobile-menu.open {
             transform: translateX(0);
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== ABOUT US REFINED TYPOGRAPHY ===== */
+        .about-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .about-carousel-text {
+            font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+        }
+
+        /* ===== PREMIUM INPUT STYLING ===== */
+        .premium-input {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .premium-input:focus {
+            border-color: rgba(147, 51, 234, 0.8);
+            box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .premium-button {
+            background: linear-gradient(135deg, #9333ea, #a855f7);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .premium-button:hover::before {
+            left: 100%;
+        }
+
+        .premium-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(147, 51, 234, 0.4);
         }
     </style>
 </head>
 
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white font-helvetica">
+    <!-- Background Glow Effects -->
     <div class="background-glows">
-    <div class="glow"></div>
-    <div class="glow"></div>
-    <div class="glow"></div>
-  </div>
-    <div id="preloader" class="fixed inset-0 flex justify-center items-center z-50">
-        <img src="./Assets/troupeX-logo2.jpg" alt="TroupeX Logo" class="w-48 animate-pulse">
+        <div class="glow"></div>
+        <div class="glow"></div>
+        <div class="glow"></div>
     </div>
 
-    <div id="main-content" class="opacity-0 transition-opacity duration-500">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 flex justify-center items-center z-50">
+        <div class="preloader-logo">
+            <img src="./Assets/troupeX-logo2.jpg" alt="TroupeX Logo" class="w-32 h-32 rounded-full object-cover">
+        </div>
+    </div>
 
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
+
+        <!-- Hero Section -->
         <section id="hero-section" class="relative h-screen w-full flex flex-col overflow-hidden">
             <video autoplay loop muted playsinline class="hero-video">
-                <source src="./Assets/Updated-background-page2.mp4" type="video/mp4">
+                <source src="https://player.vimeo.com/external/374407787.sd.mp4?s=fcfa6b5ff8e2e2a4c8cba2bab4b4a28e8e45b9c2&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
            
             <div class="absolute inset-0 bg-black/60 z-0"></div>
 
-            <header id="main-header" class="header fixed top-0 left-0 w-full z-40 px-6 py-4 transition-all duration-300">
+            <!-- Header -->
+            <header id="main-header" class="header glass-nav fixed top-0 left-0 w-full z-40 px-6 py-4">
                 <nav class="container mx-auto flex justify-between items-center">
-                    <a href="#"><img src="./Assets/troupeX-logo2.jpg" alt="TroupeX Logo" class="logo h-10 transition-all duration-300"></a>
-                    <ul class="hidden md:flex items-center space-x-12 text-gray-300">
-                        <li><a href="#AboutUS" class="nav-link hover:text-purple-300 transition-colors ">About</a></li>
-                        <li><a href="#rewards-section" class="nav-link hover:text-purple-300 transition-colors">Overview</a></li>
-                        <li><a href="#overview" class="nav-link hover:text-purple-300 transition-colors">How it works</a></li>
-                        <li>
-                            <a href="#contact" class="contact-btn relative overflow-hidden bg-gray-200 text-black text-base font-semibold px-5 py-2 rounded-full">
+                    <a href="#" class="scroll-reveal">
+                        <img src="./Assets/troupeX-logo2.jpg" alt="TroupeX Logo" class="logo h-10 hover-lift rounded-lg">
+                    </a>
+                    <ul class="hidden md:flex items-center space-x-8 text-gray-300">
+                        <li class="scroll-reveal" style="animation-delay: 0.1s;">
+                            <a href="#AboutUS" class="nav-link hover:text-purple-300 font-medium">About</a>
+                        </li>
+                        <li class="scroll-reveal" style="animation-delay: 0.2s;">
+                            <a href="#rewards-section" class="nav-link hover:text-purple-300 font-medium">Overview</a>
+                        </li>
+                        <li class="scroll-reveal" style="animation-delay: 0.3s;">
+                            <a href="#overview" class="nav-link hover:text-purple-300 font-medium">How it works</a>
+                        </li>
+                        <li class="scroll-reveal" style="animation-delay: 0.4s;">
+                            <a href="#contact" class="contact-btn text-black text-sm font-semibold px-6 py-3 rounded-full">
                                 <span class="relative z-10">Contact</span>
                             </a>
                         </li>
                     </ul>
-                    <button id="mobile-menu-btn" class="md:hidden text-white" aria-label="Open mobile menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    <button id="mobile-menu-btn" class="md:hidden text-white hover:text-purple-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
                     </button>
                 </nav>
             </header>
 
+            <!-- Mobile Menu -->
             <div id="mobile-menu" class="mobile-menu md:hidden">
                 <div class="flex justify-end p-6">
-                    <button id="close-menu-btn" class="text-white" aria-label="Close mobile menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    <button id="close-menu-btn" class="text-white hover:text-purple-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     </button>
                 </div>
-                <ul class="flex flex-col items-center space-y-8 text-gray-300 text-2xl">
-                    <li><a href="#overview" class="hover:text-white transition-colors">Overview</a></li>
-                    <li><a href="#how-it-works" class="hover:text-white transition-colors">How it works</a></li>
-                    <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
-                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                <ul class="flex flex-col items-center space-y-8 text-gray-300 text-xl">
+                    <li><a href="#AboutUS" class="hover:text-purple-300 transition-colors mobile-menu-link">About</a></li>
+                    <li><a href="#rewards-section" class="hover:text-purple-300 transition-colors mobile-menu-link">Overview</a></li>
+                    <li><a href="#overview" class="hover:text-purple-300 transition-colors mobile-menu-link">How it works</a></li>
+                    <li><a href="#contact" class="hover:text-purple-300 transition-colors mobile-menu-link">Contact</a></li>
                 </ul>
             </div>
 
+            <!-- Hero Content -->
             <main class="relative flex-grow flex flex-col items-center justify-center text-center px-4">
                 <div class="relative z-10">
-                    <h1 id="typing-headline" class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight"></h1>
-                    <p class="max-w-2xl mx-auto mt-6 text-lg md:text-xl text-gray-400 opacity-0 animate-fadeInUp">
+                    <h1 id="typing-headline" class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-6"></h1>
+                    <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 opacity-0 scroll-reveal" style="animation-delay: 2s;">
                         Troupe is an end-to-end ecosystem to find work, upskill, collaborate and grow for the project-based world.
                     </p>
                 </div>
             </main>
         </section>
-        <section id="AboutUS" class="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden">
 
-    <!-- Background Glow Effects -->
-    <!-- <div class="glow" style="top: 10%; left: 20%;"></div>
-    <div class="glow" style="bottom: 20%; right: 20%;"></div>
-    <div class="glow" style="top: 50%; right: 50%;"></div> -->
+        <!-- About Us Section -->
+        <section id="AboutUS" class="min-h-screen w-full relative flex flex-col items-center justify-center overflow-hidden py-20">
+            <h1 class="about-title text-center mb-16 z-10 scroll-reveal">About Us</h1>
 
-    <!-- Title -->
-    <h1 class="text-4xl sm:text-6xl font-bold mb-10 z-10" >About Us</h1>
-
-    <!-- Rotating Carousel Text -->
-    <div id="text-wrapper" class="relative w-full h-[250px] flex flex-col items-center justify-center z-10">
-      <!-- JS Injects lines here -->
-    </div>
-  </section>
-        <!-- <section id="letter-reveal-section" class="relative bg-black text-white w-full flex flex-col items-center justify-center py-32">
-            <div class="max-w-4xl mx-auto px-6 text-center space-y-24">
-                <p class="text-lg uppercase tracking-widest text-gray-300">Take the future into your own hands.</p>
-                <div class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight space-y-4">
-                    <p class="line"><span class="char">N</span><span class="char">o</span><span class="char">&nbsp;</span><span class="char">m</span><span class="char">o</span><span class="char">r</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">w</span><span class="char">a</span><span class="char">i</span><span class="char">t</span><span class="char">i</span><span class="char">n</span><span class="char">g</span><span class="char">.</span></p>
-                    <p class="line"><span class="char">N</span><span class="char">o</span><span class="char">&nbsp;</span><span class="char">m</span><span class="char">o</span><span class="char">r</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">g</span><span class="char">a</span><span class="char">t</span><span class="char">e</span><span class="char">k</span><span class="char">e</span><span class="char">e</span><span class="char">p</span><span class="char">e</span><span class="char">r</span><span class="char">s</span><span class="char">.</span></p>
-                    <p class="line"><span class="char">G</span><span class="char">e</span><span class="char">t</span><span class="char">&nbsp;</span><span class="char">a</span><span class="char">c</span><span class="char">c</span><span class="char">e</span><span class="char">s</span><span class="char">s</span><span class="char">.</span><span class="char">&nbsp;</span><span class="char">f</span><span class="char">o</span><span class="char">r</span><span class="char">&nbsp;</span><span class="char">y</span><span class="char">o</span><span class="char">u</span><span class="char">r</span><span class="char">s</span><span class="char">e</span><span class="char">l</span><span class="char">f</span><span class="char">,</span></p>
-                    <p class="line"><span class="char">B</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">b</span><span class="char">o</span><span class="char">l</span><span class="char">d</span><span class="char">.</span></p>
-                    <p class="line"><span class="char">B</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">r</span><span class="char">a</span><span class="char">w</span><span class="char">.</span></p>
-                    <p class="line"><span class="char">B</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">r</span><span class="char">e</span><span class="char">a</span><span class="char">l</span><span class="char">.</span></p>
-                    <p class="line"><span class="char">T</span><span class="char">r</span><span class="char">o</span><span class="char">u</span><span class="char">p</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">i</span><span class="char">n</span><span class="char">&nbsp;</span><span class="char">t</span><span class="char">o</span><span class="char">&nbsp;</span><span class="char">s</span><span class="char">h</span><span class="char">a</span><span class="char">p</span><span class="char">e</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">t</span><span class="char">h</span><span class="char">e</span></p>
-                    <p class="line"><span class="char">h</span><span class="char">u</span><span class="char">m</span><span class="char">a</span><span class="char">n</span><span class="char">-</span><span class="char">l</span><span class="char">e</span><span class="char">d</span><span class="char">&nbsp;</span><span class="char">w</span><span class="char">o</span><span class="char">r</span><span class="char">l</span><span class="char">d</span><span class="char">&nbsp;</span><span class="char">a</span><span class="char">h</span><span class="char">e</span><span class="char">a</span><span class="char">d</span><span class="char">.</span></p>
-                </div>
+            <!-- Rotating Carousel Text -->
+            <div id="text-wrapper" class="relative w-full max-w-6xl h-64 flex flex-col items-center justify-center z-10 px-4">
+                <!-- JS Injects lines here -->
             </div>
-        </section> -->
+        </section>
 
+        <!-- Rewards Section -->
         <section id="rewards-section" class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
             <video autoplay loop muted playsinline class="rewards-video">
-                <source src="./Assets/Spider.mp4" type="video/mp4">
+                <source src="https://player.vimeo.com/external/374407787.sd.mp4?s=fcfa6b5ff8e2e2a4c8cba2bab4b4a28e8e45b9c2&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             
             <div class="absolute inset-0 bg-black/70 z-0"></div>
             <div class="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-                <h2 class="text-6xl md:text-8xl font-extrabold">
+                <h2 class="text-5xl md:text-7xl font-bold mb-8 scroll-reveal">
                     All that you deserve
                     <br>
                     and some more.
                 </h2>
-                <p class="max-w-xl mx-auto mt-6 text-lg text-gray-300">
+                <p class="max-w-xl mx-auto text-lg text-gray-300 scroll-reveal" style="animation-delay: 0.2s;">
                     If you're a Troupe member, you're already a step ahead. Every experience you unlock takes you higher up the pedestal.
                 </p>
             </div>
         </section>
 
+        <!-- Overview Cards Section -->
         <div id="overview" class="card-container relative px-4 py-16">
-        
-        <div class="card mb-8 active" data-index="0">
-            <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
-                <img class="card-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Create Portfolio">
-                <div class="card-text">
-                    <div class="text-4xl mb-4">📁</div>
-                    <h2 class="text-4xl font-bold mb-4">Create Portfolio</h2>
-                    <p class="text-gray-300 text-lg leading-relaxed">Showcase your best work in our sleek interface with customizable templates and client testimonials.</p>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat-item">
-                        <div class="stat-label">Engagement</div>
-                        <div class="stat-value">95%</div>
+            
+            <div class="card mb-8 active" data-index="0">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px] hover-lift">
+                    <img class="card-image" src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Create Portfolio">
+                    <div class="card-text">
+                        <div class="text-4xl mb-4">📁</div>
+                        <h2 class="text-4xl font-bold mb-4">Create Portfolio</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Showcase your best work in our sleek interface with customizable templates and client testimonials.</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Satisfaction</div>
-                        <div class="stat-value">4.8★</div>
+                    <div class="stats-overlay">
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Engagement</div>
+                            <div class="stat-value font-bold">95%</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Satisfaction</div>
+                            <div class="stat-value font-bold">4.8★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-8" data-index="1">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px] hover-lift">
+                    <img class="card-image left" src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Creative Community">
+                    <div class="card-text right">
+                        <div class="text-4xl mb-4">👥</div>
+                        <h2 class="text-4xl font-bold mb-4">Creative Community</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Join thousands collaborating on projects with real-time messaging and skill matching.</p>
+                    </div>
+                    <div class="stats-overlay left">
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Members</div>
+                            <div class="stat-value font-bold">50K+</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Projects</div>
+                            <div class="stat-value font-bold">12K</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-8" data-index="2">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px] hover-lift">
+                    <img class="card-image" src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Share Projects">
+                    <div class="card-text">
+                        <div class="text-4xl mb-4">🚀</div>
+                        <h2 class="text-4xl font-bold mb-4">Share Projects</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Get feedback through our engaged community with smart tagging and analytics.</p>
+                    </div>
+                    <div class="stats-overlay">
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Shares</div>
+                            <div class="stat-value font-bold">2.5M</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Feedback</div>
+                            <div class="stat-value font-bold">98%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-8" data-index="3">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px] hover-lift">
+                    <img class="card-image left" src="https://images.pexels.com/photos/3182796/pexels-photo-3182796.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Grow Network">
+                    <div class="card-text right">
+                        <div class="text-4xl mb-4">🌐</div>
+                        <h2 class="text-4xl font-bold mb-4">Grow Network</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Connect with professionals through our intelligent networking platform.</p>
+                    </div>
+                    <div class="stats-overlay left">
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Connections</div>
+                            <div class="stat-value font-bold">100K</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Success Rate</div>
+                            <div class="stat-value font-bold">92%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-8" data-index="4">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px] hover-lift">
+                    <img class="card-image" src="https://images.pexels.com/photos/3861943/pexels-photo-3861943.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AI Skill Builder">
+                    <div class="card-text">
+                        <div class="text-4xl mb-4">🧠</div>
+                        <h2 class="text-4xl font-bold mb-4">AI Skill Builder</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Our AI analyzes your work and suggests targeted learning to keep you ahead.</p>
+                    </div>
+                    <div class="stats-overlay">
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Accuracy</div>
+                            <div class="stat-value font-bold">96%</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Growth</div>
+                            <div class="stat-value font-bold">3x</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-8" data-index="5">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px] hover-lift">
+                    <img class="card-image left" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Smart Matching">
+                    <div class="card-text right">
+                        <div class="text-4xl mb-4">✨</div>
+                        <h2 class="text-4xl font-bold mb-4">Smart Matching</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Find perfect collaborators with our advanced matching system.</p>
+                    </div>
+                    <div class="stats-overlay left">
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Matches</div>
+                            <div class="stat-value font-bold">85%</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Success</div>
+                            <div class="stat-value font-bold">4.9★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-8" data-index="6">
+                <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px] hover-lift">
+                    <img class="card-image" src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Discover Talent">
+                    <div class="card-text">
+                        <div class="text-4xl mb-4">🔍</div>
+                        <h2 class="text-4xl font-bold mb-4">Discover Talent</h2>
+                        <p class="text-gray-300 text-lg leading-relaxed">Browse curated collections of exceptional creatives across all disciplines.</p>
+                    </div>
+                    <div class="stats-overlay">
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Talents</div>
+                            <div class="stat-value font-bold">25K+</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label text-xs opacity-80">Quality</div>
+                            <div class="stat-value font-bold">4.7★</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card mb-8" data-index="1">
-            <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
-                <img class="card-image left" src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Creative Community">
-                <div class="card-text right">
-                    <div class="text-4xl mb-4">👥</div>
-                    <h2 class="text-4xl font-bold mb-4">Creative Community</h2>
-                    <p class="text-gray-300 text-lg leading-relaxed">Join thousands collaborating on projects with real-time messaging and skill matching.</p>
-                </div>
-                <div class="stats-overlay left">
-                    <div class="stat-item">
-                        <div class="stat-label">Members</div>
-                        <div class="stat-value">50K+</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Projects</div>
-                        <div class="stat-value">12K</div>
-                    </div>
-                </div>
+        <!-- Waitlist Section with Premium Styling -->
+        <section id="join-waitlist-section" class="relative py-20 px-4 md:px-10 min-h-screen flex items-center justify-center">
+            <!-- Background Video -->
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                    <source src="https://player.vimeo.com/external/374407787.sd.mp4?s=fcfa6b5ff8e2e2a4c8cba2bab4b4a28e8e45b9c2&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-        </div>
 
-        <div class="card mb-8" data-index="2">
-            <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
-                <img class="card-image" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Share Projects">
-                <div class="card-text">
-                    <div class="text-4xl mb-4">🚀</div>
-                    <h2 class="text-4xl font-bold mb-4">Share Projects</h2>
-                    <p class="text-gray-300 text-lg leading-relaxed">Get feedback through our engaged community with smart tagging and analytics.</p>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat-item">
-                        <div class="stat-label">Shares</div>
-                        <div class="stat-value">2.5M</div>
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/60 z-10"></div>
+
+            <!-- Main Glass Card Container -->
+            <div class="relative z-20 flex flex-col lg:flex-row items-stretch max-w-6xl w-full mx-auto gap-8 lg:gap-0">
+
+                <!-- LEFT SIDE: Waitlist Form -->
+                <div id="waitlist-form-card" class="waitlist-glass-container p-8 lg:p-12 text-center flex-1 scroll-reveal">
+                    <div class="text-center mb-8">
+                        <span class="bg-gray-800/80 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full inline-flex items-center space-x-2 hover-glow">
+                            <span>Soon</span>
+                            <span class="text-purple-300">Launch in Feb 2025</span>
+                        </span>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Feedback</div>
-                        <div class="stat-value">98%</div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Join the waitlist</h2>
+                    <p class="text-gray-300 mb-8 max-w-md mx-auto leading-relaxed">
+                        Get exclusive early access to our software and stay updated on launch news.
+                    </p>
+                    <form id="waitlist-form">
+                        <div class="relative mb-6">
+                            <input 
+                                type="email" 
+                                id="email-input" 
+                                class="premium-input w-full rounded-xl p-4 text-white placeholder-gray-400 focus:outline-none" 
+                                placeholder="Your Mail Address" 
+                                required
+                            >
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="premium-button w-full text-white font-semibold py-4 rounded-xl shadow-lg"
+                        >
+                            Join waitlist
+                        </button>
+                    </form>
+                    <p class="mt-6 text-sm text-gray-400">Recently Joined Members!</p>
+                    <div class="mt-3 flex justify-center -space-x-2">
+                        <img src="https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face" class="w-8 h-8 rounded-full border-2 border-purple-500 hover-lift" alt="Avatar 1" />
+                        <img src="https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face" class="w-8 h-8 rounded-full border-2 border-purple-500 hover-lift" alt="Avatar 2" />
+                        <img src="https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face" class="w-8 h-8 rounded-full border-2 border-purple-500 hover-lift" alt="Avatar 3" />
                     </div>
                 </div>
+
+                <!-- LEFT SIDE: Thank You Message (Hidden initially) -->
+                <div id="thank-you-card" class="thank-you-glass-container hidden w-full min-h-[450px] p-8 lg:p-12 text-center flex flex-col items-center justify-center flex-1">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <div class="text-6xl mb-6">🎉</div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Thank you!</h2>
+                        <p class="text-gray-300 text-lg">Your email has been added to the waitlist.</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE: Visuals -->
+                <div class="hidden lg:flex flex-1 relative items-center justify-center p-8 lg:p-12">
+                    <!-- Before joining image -->
+                    <img 
+                        id="image-before" 
+                        src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" 
+                        alt="Before joining" 
+                        class="waitlist-image rounded-2xl w-full h-full object-cover shadow-2xl hover-lift"
+                    >
+
+                    <!-- After joining video -->
+                    <video 
+                        id="image-after" 
+                        autoplay 
+                        loop 
+                        muted 
+                        playsinline 
+                        class="hidden absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl border-2 border-green-500 waitlist-image"
+                    >
+                        <source src="https://player.vimeo.com/external/374407787.sd.mp4?s=fcfa6b5ff8e2e2a4c8cba2bab4b4a28e8e45b9c2&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
             </div>
-        </div>
+        </section>
 
-        <div class="card mb-8" data-index="3">
-            <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
-                <img class="card-image left" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Grow Network">
-                <div class="card-text right">
-                    <div class="text-4xl mb-4">🌐</div>
-                    <h2 class="text-4xl font-bold mb-4">Grow Network</h2>
-                    <p class="text-gray-300 text-lg leading-relaxed">Connect with professionals through our intelligent networking platform.</p>
-                </div>
-                <div class="stats-overlay left">
-                    <div class="stat-item">
-                        <div class="stat-label">Connections</div>
-                        <div class="stat-value">100K</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Success Rate</div>
-                        <div class="stat-value">92%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card mb-8" data-index="4">
-            <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
-                <img class="card-image" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Skill Builder">
-                <div class="card-text">
-                    <div class="text-4xl mb-4">🧠</div>
-                    <h2 class="text-4xl font-bold mb-4">AI Skill Builder</h2>
-                    <p class="text-gray-300 text-lg leading-relaxed">Our AI analyzes your work and suggests targeted learning to keep you ahead.</p>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat-item">
-                        <div class="stat-label">Accuracy</div>
-                        <div class="stat-value">96%</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Growth</div>
-                        <div class="stat-value">3x</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card mb-8" data-index="5">
-            <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
-                <img class="card-image left" src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Smart Matching">
-                <div class="card-text right">
-                    <div class="text-4xl mb-4">✨</div>
-                    <h2 class="text-4xl font-bold mb-4">Smart Matching</h2>
-                    <p class="text-gray-300 text-lg leading-relaxed">Find perfect collaborators with our advanced matching system.</p>
-                </div>
-                <div class="stats-overlay left">
-                    <div class="stat-item">
-                        <div class="stat-label">Matches</div>
-                        <div class="stat-value">85%</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Success</div>
-                        <div class="stat-value">4.9★</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card mb-8" data-index="6">
-            <div class="card-content max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative min-h-[400px]">
-                <img class="card-image" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Discover Talent">
-                <div class="card-text">
-                    <div class="text-4xl mb-4">🔍</div>
-                    <h2 class="text-4xl font-bold mb-4">Discover Talent</h2>
-                    <p class="text-gray-300 text-lg leading-relaxed">Browse curated collections of exceptional creatives across all disciplines.</p>
-                </div>
-                <div class="stats-overlay">
-                    <div class="stat-item">
-                        <div class="stat-label">Talents</div>
-                        <div class="stat-value">25K+</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Quality</div>
-                        <div class="stat-value">4.7★</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <section id="join-waitlist-section" class="relative py-16 px-4 md:px-10 min-h-screen flex items-center justify-center">
-  <!-- Background Video -->
-  <div class="absolute inset-0 z-0 overflow-hidden">
-    <video autoplay loop muted playsinline class="w-full h-full object-cover">
-      <source src="./Assets/waitlist-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black/60 z-10"></div>
-
-  <!-- Main Glass Card Container -->
-  <div class="relative z-20 flex flex-col lg:flex-row items-stretch max-w-6xl w-full mx-auto p-4 lg:p-0 glass-card">
-
-    <!-- LEFT SIDE: Waitlist Form -->
-    <div id="waitlist-form-card" class="waitlist-container p-8 lg:p-12 text-center flex-1">
-      <div class="text-center mb-6">
-        <span class="bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center space-x-2">
-          <span>Soon</span>
-          <span class="text-purple-300">Launch in Feb 2025</span>
-        </span>
-      </div>
-      <h2 class="text-4xl font-bold mb-4">Join the waitlist</h2>
-      <p class="text-gray-300 mb-8 max-w-md mx-auto">
-        Get exclusive early access to our software and stay updated on launch news.
-      </p>
-      <form id="waitlist-form">
-        <div class="relative mb-6">
-          <label for="email-input" class="sr-only">Your Mail Address</label>
-          <input type="email" id="email-input" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-300" placeholder="Your Mail Address" required>
-        </div>
-        <button type="submit" class="w-full bg-purple-600 text-white font-semibold py-4 rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-200">
-          Join waitlist
-        </button>
-      </form>
-      <p class="mt-4 text-sm text-gray-400">Recently Joined Members!</p>
-      <div class="mt-2 flex justify-center -space-x-2">
-        <img src="https://i.pravatar.cc/32?img=1" class="w-8 h-8 rounded-full border-2 border-black" alt="Avatar 1" />
-        <img src="https://i.pravatar.cc/32?img=2" class="w-8 h-8 rounded-full border-2 border-black" alt="Avatar 2" />
-        <img src="https://i.pravatar.cc/32?img=3" class="w-8 h-8 rounded-full border-2 border-black" alt="Avatar 3" />
-      </div>
-    </div>
-
-    <!-- LEFT SIDE: Thank You Message (Hidden initially) -->
-<div id="thank-you-card" class="thank-you-card hidden w-full h-full min-h-[450px] p-8 lg:p-12 rounded-lg shadow-xl text-center flex flex-col items-center justify-center">      <div class="flex flex-col items-center justify-center h-full">
-        <h2 class="text-3xl font-bold">Thank you!</h2>
-        <p class="text-gray-300 mt-5">Your email has been added to the waitlist.</p>
-      </div>
-    </div>
-
-    <!-- RIGHT SIDE: Visuals -->
-    <div class="hidden lg:flex flex-1 relative items-center justify-center p-8 lg:p-12">
-      <!-- Before joining image -->
-      <img id="image-before" src="./Assets/JoinusUpdated.jpg" alt="Before joining" class="rounded-lg w-full h-full object-cover shadow-2xl border ">
-
-      <!-- After joining image -->
-       <video id="image-after" autoplay loop muted playsinline class="hidden absolute inset-0 w-full h-full object-cover rounded-lg shadow-2xl border ">
-      <source src="./Assets/ThankYouVideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-      <!-- <img id="image-after" src="./Assets/ThankYou.jpg" alt="After joining" class="hidden absolute inset-0 w-full h-full object-cover rounded-lg shadow-2xl border border-white/10"> -->
-    </div>
-
-  </div>
-</section>
-
-
-
-        <section id="about" class="relative z-20 max-w-6xl mx-auto mt-20 px-6">
-            <div class="glass-card text-white py-12 px-8">
+        <!-- About Footer Section -->
+        <section id="about" class="relative z-20 max-w-6xl mx-auto mt-20 px-6 scroll-reveal">
+            <div class="glass-card text-white py-12 px-8 hover-lift">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-10">
                     <div class="text-center md:text-left">
-                        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                             Experience superior<br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">skip tracing</span>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">creative collaboration</span>
                         </h2>
-                        <p class="text-gray-400 mb-6">150+ data points per search.</p>
-                        <button class="px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition">
+                        <p class="text-gray-400 mb-6 text-lg">150+ data points per creative profile.</p>
+                        <button class="premium-button px-8 py-3 text-white font-semibold rounded-full">
                             Get started
                         </button>
                     </div>
 
-                    <div>
-                        <img src="./Assets/above-footer1.png" alt="a spinning globe" class="w-64 h-64 md:w-72 md:h-72 object-contain" />
+                    <div class="hover-lift">
+                        <img 
+                            src="https://images.pexels.com/photos/3861943/pexels-photo-3861943.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" 
+                            alt="Creative collaboration visualization" 
+                            class="w-64 h-64 md:w-72 md:h-72 object-cover rounded-full shadow-2xl animate-float"
+                        >
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Footer -->
         <footer id="contact" class="bg-black text-gray-400 py-12 px-6 mt-20">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-white font-bold text-lg mb-2">TroupeX</h3>
-                    <p>Hyderabad, India.</p>
-                    <p class="mt-4">Phone: <span class="text-white">+91 7075190397</span></p>
-                    <p>Email: <a href="mailto:support@troupex.com" class="text-white hover:underline">support@troupex.com</a></p>
+                <div class="scroll-reveal">
+                    <h3 class="text-white font-bold text-lg mb-4">TroupeX</h3>
+                    <p class="mb-2">Hyderabad, India.</p>
+                    <p class="mb-2">Phone: <span class="text-white font-medium">+91 7075190397</span></p>
+                    <p>Email: <a href="mailto:support@troupex.com" class="text-white hover:text-purple-300 transition-colors">support@troupex.com</a></p>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-semibold mb-2">Quick links</h4>
-                    <ul class="space-y-1">
-                        <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Resources</a></li>
-                        <li><a href="#about" class="hover:text-white transition-colors">About us</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="#contact" class="hover:text-white transition-colors">Contact us</a></li>
+                <div class="scroll-reveal" style="animation-delay: 0.1s;">
+                    <h4 class="text-white font-semibold mb-4">Quick links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Resources</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors hover:translate-x-1 inline-block">About us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">FAQ</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Contact us</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-semibold mb-2">Social</h4>
-                    <ul class="space-y-1">
-                        <li><a href="#" class="hover:text-white transition-colors">Facebook</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
-                        <li><a href="https://www.linkedin.com/company/troupex/" class="hover:text-white transition-colors">LinkedIn</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Twitter</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">YouTube</a></li>
+                <div class="scroll-reveal" style="animation-delay: 0.2s;">
+                    <h4 class="text-white font-semibold mb-4">Social</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Facebook</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/troupex/" class="hover:text-white transition-colors hover:translate-x-1 inline-block">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">YouTube</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-semibold mb-2">Legal</h4>
-                    <ul class="space-y-1">
-                        <li><a href="#" class="hover:text-white transition-colors">Terms of service</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Privacy policy</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Cookie policy</a></li>
+                <div class="scroll-reveal" style="animation-delay: 0.3s;">
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Terms of service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Privacy policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Cookie policy</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="text-center mt-10 text-sm text-gray-600">
-                © 2024 TroupeX. All rights reserved.
+            <div class="text-center mt-12 pt-8 border-t border-gray-800 text-sm text-gray-500 scroll-reveal">
+                © 2024 TroupeX. All rights reserved. Built with premium design standards.
             </div>
         </footer>
     </div>
     
     <script>
-        // This function runs once the entire page, including assets, is loaded.
-        window.onload = function() {
+        // ===== INITIALIZATION =====
+        window.addEventListener('load', function() {
+            initializeWebsite();
+        });
+
+        function initializeWebsite() {
             const preloader = document.getElementById('preloader');
             const mainContent = document.getElementById('main-content');
             
-            // Wait for 1 second, then fade out the preloader and show the content
             setTimeout(() => {
                 preloader.style.opacity = '0';
-                preloader.style.display = 'none';
-                mainContent.style.opacity = '1';
-
-                // Initialize all animations once the page is visible
-                typewriterEffect();
-                setupScrollObserver();
-                setupCardObserver();
-                setupMobileMenu();
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    mainContent.style.opacity = '1';
+                    
+                    // Initialize all features
+                    initializeAnimations();
+                    initializeScroll();
+                    initializeCarousel();
+                    initializeCards();
+                    initializeMobileMenu();
+                    initializeWaitlist();
+                    initializeScrollReveal();
+                }, 500);
             }, 1000);
-        };
-        
-        // This function adds a class to the header on scroll, creating the effect
-        function handleScroll() {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) { // Adjust this value as needed
-                header.classList.add('scrolled-header');
-            } else {
-                header.classList.remove('scrolled-header');
-            }
         }
 
-        // Add the scroll event listener
-        window.addEventListener('scroll', handleScroll);
-        
-        // This function creates the typing effect for the main hero headline.
-        function typewriterEffect() {
+        // ===== SCROLL ANIMATIONS =====
+        function initializeAnimations() {
+            // Typewriter effect
             const headline = document.getElementById('typing-headline');
             const text = "Built for the Originals";
             let charIndex = 0;
@@ -954,95 +1149,105 @@
                 if (charIndex < text.length) {
                     headline.innerHTML += text.charAt(charIndex);
                     charIndex++;
-                    setTimeout(type, 110);
+                    setTimeout(type, 100);
                 } else {
                     headline.classList.add('typing-done');
+                    // Trigger subtitle animation
+                    setTimeout(() => {
+                        const subtitle = document.querySelector('.scroll-reveal');
+                        if (subtitle) subtitle.classList.add('revealed');
+                    }, 500);
                 }
             }
-            setTimeout(type, 500);
+            setTimeout(type, 800);
         }
-        //codeee
-        const lines = [
-      "Building the world’s biggest creative troupe, where talent from every corner of culture thrives together.",
-      "Enabling collaboration at scale  spanning industries, geographies, and ways of working.",
-      "Giving creators the tools, trust, and momentum to turn ideas into impact.",
-      "Redefining how original work is found, shared, and experienced across mediums and moments.",
-      "Creating foundations where imagination can grow, evolve, and endure through change.",
-      "Advancing a human-led creative world, by placing people and process at the center."
-    ];
 
-    const wrapper = document.getElementById("text-wrapper");
-    let currentIndex = 0;
+        function initializeScroll() {
+            const header = document.getElementById('main-header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled-header');
+                } else {
+                    header.classList.remove('scrolled-header');
+                }
+            });
+        }
 
-    function createLine(text, position) {
-      const div = document.createElement("div");
-      div.className = `absolute w-full text-center sm:px-4 carousel-line`;
-
-      if (position === "top") {
-        div.style.opacity = "0.5";
-        div.style.transform = "translateY(-100px) scale(0.6)";
-        div.style.zIndex = "1";
-      } else if (position === "middle") {
-        div.style.opacity = "1";
-        div.style.transform = "translateY(0) scale(1)";
-        div.style.zIndex = "2";
-      } else if (position === "bottom") {
-        div.style.opacity = "0.5";
-        div.style.transform = "translateY(100px) scale(0.6)";
-        div.style.zIndex = "1";
-      }
-
-      div.innerHTML = `<p class="text-2xl sm:text-4xl lg:text-5xl">${text}</p>`;
-      return div;
-    }
-
-    function updateCarousel() {
-      wrapper.innerHTML = "";
-
-      const prev = lines[(currentIndex - 1 + lines.length) % lines.length];
-      const curr = lines[currentIndex];
-      const next = lines[(currentIndex + 1) % lines.length];
-
-      wrapper.appendChild(createLine(prev, "top"));
-      wrapper.appendChild(createLine(curr, "middle"));
-      wrapper.appendChild(createLine(next, "bottom"));
-
-      currentIndex = (currentIndex + 1) % lines.length;
-    }
-
-    updateCarousel();
-    setInterval(updateCarousel, 2500); // Change every 2.5 seconds
-        // This function handles the letter-reveal animation for the second section.
-        /* function setupScrollObserver() {
-            const lines = document.querySelectorAll('.line');
-            const options = {
-                root: null,
-                rootMargin: '-50% 0px -50% 0px',
-                threshold: 0
-            };
-
+        function initializeScrollReveal() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('is-active');
+                        entry.target.classList.add('revealed');
                     }
                 });
-            }, options);
-
-            lines.forEach(line => {
-                observer.observe(line);
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             });
-        } */
-        //Mobile view purpose
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card');
-            const currentCardSpan = document.getElementById('current-card');
-            const totalCardsSpan = document.getElementById('total-cards');
-            
-            // Set total cards count
-            if (totalCardsSpan) {
-                totalCardsSpan.textContent = cards.length;
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // ===== ABOUT US CAROUSEL =====
+        function initializeCarousel() {
+            const lines = [
+                "Building the world's biggest creative troupe, where talent from every corner of culture thrives together.",
+                "Enabling collaboration at scale spanning industries, geographies, and ways of working.",
+                "Giving creators the tools, trust, and momentum to turn ideas into impact.",
+                "Redefining how original work is found, shared, and experienced across mediums and moments.",
+                "Creating foundations where imagination can grow, evolve, and endure through change.",
+                "Advancing a human-led creative world, by placing people and process at the center."
+            ];
+
+            const wrapper = document.getElementById("text-wrapper");
+            let currentIndex = 0;
+
+            function createLine(text, position) {
+                const div = document.createElement("div");
+                div.className = `absolute w-full text-center px-4 carousel-line about-carousel-text`;
+
+                if (position === "top") {
+                    div.style.opacity = "0.3";
+                    div.style.transform = "translateY(-100px) scale(0.8)";
+                    div.style.zIndex = "1";
+                } else if (position === "middle") {
+                    div.style.opacity = "1";
+                    div.style.transform = "translateY(0) scale(1)";
+                    div.style.zIndex = "2";
+                } else if (position === "bottom") {
+                    div.style.opacity = "0.3";
+                    div.style.transform = "translateY(100px) scale(0.8)";
+                    div.style.zIndex = "1";
+                }
+
+                div.innerHTML = `<p class="font-light leading-relaxed">${text}</p>`;
+                return div;
             }
+
+            function updateCarousel() {
+                wrapper.innerHTML = "";
+
+                const prev = lines[(currentIndex - 1 + lines.length) % lines.length];
+                const curr = lines[currentIndex];
+                const next = lines[(currentIndex + 1) % lines.length];
+
+                wrapper.appendChild(createLine(prev, "top"));
+                wrapper.appendChild(createLine(curr, "middle"));
+                wrapper.appendChild(createLine(next, "bottom"));
+
+                currentIndex = (currentIndex + 1) % lines.length;
+            }
+
+            updateCarousel();
+            setInterval(updateCarousel, 3000);
+        }
+
+        // ===== CARD ANIMATIONS =====
+        function initializeCards() {
+            const cards = document.querySelectorAll('.card');
             
             function updateActiveCard() {
                 const scrollY = window.scrollY;
@@ -1059,20 +1264,14 @@
                         activeIndex = index;
                     }
                     
-                    // Remove active class from all cards
                     card.classList.remove('active');
                 });
                 
-                // Add active class to current card
                 if (cards[activeIndex]) {
                     cards[activeIndex].classList.add('active');
-                    if (currentCardSpan) {
-                        currentCardSpan.textContent = activeIndex + 1;
-                    }
                 }
             }
             
-            // Throttle scroll events for better performance
             let ticking = false;
             function handleScroll() {
                 if (!ticking) {
@@ -1084,93 +1283,15 @@
                 }
             }
             
-            // Initial call
             updateActiveCard();
-            
-            // Listen for scroll events
             window.addEventListener('scroll', handleScroll);
-            
-            // Handle resize events
             window.addEventListener('resize', () => {
                 setTimeout(updateActiveCard, 100);
             });
-        });
-        
-
-        // JavaScript to handle the card animations and progress indicator
-        function setupCardObserver() {
-            const cards = document.querySelectorAll('.card');
-            const currentCardElement = document.getElementById('current-card');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -50% 0px',
-                threshold: 0
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        cards.forEach(card => card.classList.remove('active'));
-                        const activeCard = entry.target;
-                        activeCard.classList.add('active');
-                        const activeIndex = parseInt(activeCard.dataset.index);
-                        if (currentCardElement) {
-                            currentCardElement.textContent = activeIndex + 1;
-                        }
-                    }
-                });
-            }, observerOptions);
-
-            cards.forEach(card => {
-                observer.observe(card);
-            });
-
-            if (cards.length > 0) {
-                cards[0].classList.add('active');
-                if (currentCardElement) {
-                    currentCardElement.textContent = '1';
-                }
-            }
         }
 
-        // Section 4 Join waitList Thank You
-        const waitlistForm = document.getElementById('waitlist-form');
-        if (waitlistForm) {
-            waitlistForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                const waitlistFormCard = document.getElementById('waitlist-form-card');
-                const thankYouCard = document.getElementById('thank-you-card');
-                const imageBefore = document.getElementById('image-before');
-                const imageAfter = document.getElementById('image-after');
-
-                if (waitlistFormCard && thankYouCard) {
-                    waitlistFormCard.classList.add('hidden');
-                    thankYouCard.classList.remove('hidden');
-                }
-
-                // Switch image
-                if (imageBefore && imageAfter) {
-                    imageBefore.classList.add('hidden');
-                    imageAfter.classList.remove('hidden');
-                }
-            });
-        }
-
-        /* const waitlistForm = document.getElementById('waitlist-form');
-        if (waitlistForm) {
-            waitlistForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                const waitlistFormCard = document.getElementById('waitlist-form-card');
-                const thankYouCard = document.getElementById('thank-you-card');
-                if (waitlistFormCard && thankYouCard) {
-                    waitlistFormCard.classList.add('hidden');
-                    thankYouCard.classList.remove('hidden');
-                }
-            });
-        } */
-        
-        // Mobile menu functionality
-        /* function setupMobileMenu() {
+        // ===== MOBILE MENU =====
+        function initializeMobileMenu() {
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const closeMenuBtn = document.getElementById('close-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -1184,14 +1305,126 @@
                     mobileMenu.classList.remove('open');
                 });
 
-                mobileMenu.querySelectorAll('a').forEach(link => {
+                // Close menu when clicking on links
+                document.querySelectorAll('.mobile-menu-link').forEach(link => {
                     link.addEventListener('click', () => {
                         mobileMenu.classList.remove('open');
                     });
                 });
             }
-        } */
+        }
+
+        // ===== WAITLIST FUNCTIONALITY =====
+        function initializeWaitlist() {
+            const waitlistForm = document.getElementById('waitlist-form');
+            
+            if (waitlistForm) {
+                waitlistForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    const waitlistFormCard = document.getElementById('waitlist-form-card');
+                    const thankYouCard = document.getElementById('thank-you-card');
+                    const imageBefore = document.getElementById('image-before');
+                    const imageAfter = document.getElementById('image-after');
+
+                    // Add transition effects
+                    waitlistFormCard.style.transform = 'translateX(-100%)';
+                    waitlistFormCard.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        waitlistFormCard.classList.add('hidden');
+                        thankYouCard.classList.remove('hidden');
+                        
+                        // Animate thank you card in
+                        thankYouCard.style.transform = 'translateX(100%)';
+                        thankYouCard.style.opacity = '0';
+                        
+                        setTimeout(() => {
+                            thankYouCard.style.transition = 'all 0.8s ease';
+                            thankYouCard.style.transform = 'translateX(0)';
+                            thankYouCard.style.opacity = '1';
+                        }, 50);
+                    }, 400);
+
+                    // Switch image/video
+                    if (imageBefore && imageAfter) {
+                        imageBefore.style.transition = 'all 0.8s ease';
+                        imageBefore.style.opacity = '0';
+                        imageBefore.style.transform = 'scale(0.8)';
+                        
+                        setTimeout(() => {
+                            imageBefore.classList.add('hidden');
+                            imageAfter.classList.remove('hidden');
+                            imageAfter.style.opacity = '0';
+                            imageAfter.style.transform = 'scale(0.8)';
+                            
+                            setTimeout(() => {
+                                imageAfter.style.transition = 'all 0.8s ease';
+                                imageAfter.style.opacity = '1';
+                                imageAfter.style.transform = 'scale(1)';
+                            }, 50);
+                        }, 400);
+                    }
+                });
+            }
+        }
+
+        // ===== SMOOTH SCROLLING FOR NAVIGATION LINKS =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // ===== PERFORMANCE OPTIMIZATION =====
+        // Throttle scroll events for better performance
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // ===== ACCESSIBILITY ENHANCEMENTS =====
+        // Add keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                }
+            }
+        });
+
+        // Add focus indicators for keyboard users
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-user');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-user');
+        });
     </script>
 </body>
-
 </html>
